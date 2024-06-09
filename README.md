@@ -1,4 +1,6 @@
 # jewelry-shop
 This is a project for Hemi
 
-Created Base files 09.06.2024
+Created Base files.
+
+tiffani.com is our current design inspiration.
