@@ -4,6 +4,7 @@ const jewelriesController = require('./controllers/jewelries') // מי אחרא�
 const server = express () //building the server
 
 server.use(express.static('public'))
-server.get("/", jewelriesController.getAlljewelry)
-//server.get("/", jewelryController.getAlljewelry) // מה ינתן למי שמבקשת את עמוד הבית שלנו
+
+server.get("/", jewelriesController.getAlljewelries) //redirecting / to controller.
+
 server.listen(80) //listning on port 80 (might change to https and 443 if have time)
