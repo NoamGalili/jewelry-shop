@@ -1,6 +1,6 @@
 function getAlljewelries(req, res)
 {
-    res.send('Welcome to my website')
+    res.render('jewelries.ejs')
 }
 
 // making the function public
