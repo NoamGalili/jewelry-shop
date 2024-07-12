@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title>NTLC Jewelry</title>
     <link href="./jewelry.css" rel="stylesheet">
 </head>
@@ -13,7 +13,7 @@
         <div class="icon-container">
             <img class="head-icons" src="./images/cart-icon.png" alt="Cart Icon">
             <img class="head-icons" src="./images/search-icon.png" alt="Search Icon">
-            <img class="head-icons" src="./images/user-icon.png" alt="User Icon">
+            <img class="head-icons" src="./images/user-icon.png" alt="User Icon" id="userIcon">
         </div>
     </header>
 
@@ -27,9 +27,11 @@
     </nav>
 
     <main>
-        <section id="home">
-            <h2>Welcome to NTLC Jewelry</h2>
-            <p>Your one-stop shop for exquisite jewelry pieces. Explore our collection and find the perfect piece to adorn yourself or your loved ones.</p>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Welcome to NTLC Jewelry</h2>
+                <p>Your one-stop shop for exquisite jewelry pieces. Explore our collection and find the perfect piece to adorn yourself or your loved ones.</p>
+            </div>
         </section>
 
         <section id="about">
@@ -39,27 +41,46 @@
 
         <section id="shop">
             <h2>Our Collection</h2>
-            
-            <div class="collection-item"> 
+
+            <div class="collection-item">
+                <div class="collection-item-grid">
+                    <img src="./images/necklaces/icon_necklace1.avif" alt="Necklaces Image">
+                    <img src="./images/necklaces/icon_necklace4.avif" alt="Necklaces Image">
+                    <img src="./images/necklaces/icon_necklace3.avif" alt="Necklaces Image">
+                </div>
                 <h3>Necklaces</h3>
                 <p>Discover our stunning range of necklaces, perfect for any occasion.</p>
             </div>
 
             <div class="collection-item">
+                <div class="collection-item-grid">
+                    <img src="./images/rings/icon_ring10.avif" alt="Rings Image">
+                    <img src="./images/rings/icon_ring2.avif" alt="Rings Image">
+                    <img src="./images/rings/icon_ring4.avif" alt="Rings Image">
+                </div>
                 <h3>Rings</h3>
                 <p>Explore our collection of beautifully crafted rings, from engagement rings to everyday wear.</p>
             </div>
 
             <div class="collection-item">
+                <div class="collection-item-grid">
+                    <img src="./images/bracelets/icon_bracelet1.avif" alt="Bracelets Image">
+                    <img src="./images/bracelets/icon_bracelet5.avif" alt="Bracelets Image">
+                    <img src="./images/bracelets/icon_bracelet3.avif" alt="Bracelets Image">
+                </div>
                 <h3>Bracelets</h3>
                 <p>Browse through our selection of elegant bracelets, designed to complement any outfit.</p>
             </div>
 
             <div class="collection-item">
+                <div class="collection-item-grid">
+                    <img src="./images/earings/icon_earring1.avif" alt="Earrings Image">
+                    <img src="./images/earings/icon_earring5.avif" alt="Earrings Image">
+                    <img src="./images/earings/icon_earring3.avif" alt="Earrings Image">
+                </div>
                 <h3>Earrings</h3>
                 <p>Find the perfect pair of earrings to add a touch of elegance to your look.</p>
             </div>
-            
         </section>
 
         <section id="contact">
@@ -71,5 +92,7 @@
     <footer>
         <p>&copy; 2024 NTLC Jewelry. All rights reserved.</p>
     </footer>
+
+    <script src="/routes/jewelry.js"></script>
 </body>
 </html>
