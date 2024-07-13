@@ -46,24 +46,20 @@
         <section id="shop">
             <h2>Our Collection</h2>
             <h2>Necklaces</h2>
-            <p>Discover our stunning range of necklaces, perfect for any occasion.</p>
-
-            <% for(i=0; i < jewelries.length; i++) { %>
-            
+            <p>Discover our stunning range of necklaces, perfect for any occasion.</p>            
             <jewelry>    
             
             <div class="collection-item">
                 <div class="collection-item-grid">
                     <div>
-                        <jewelryName><h4><%=jewelries[i].jewelryName %></h4></jewelryName>
+                        <jewelryName><h4><%=jewelry.jewelryName %></h4></jewelryName>
                     <img src="./images/necklaces/icon_necklace1.avif" alt="Necklaces Image">
-                    <h5><%=jewelries[i].price %></h5>
+                    <h5><%=jewelry.price %></h5>
                 </div>
                 </div>
                
             </div>
-          </jewelry>
-          <% } %>
+        </jewelry>
 
         </section>
 
