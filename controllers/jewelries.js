@@ -4,14 +4,7 @@ function getAlljewelries(req, res)
                          jewelry: []
                                })
 }
-function getAlljewelry(req, res)
-{
-    res.render('jewelry.ejs') //???
-}
-function deletejewelry(req, res)
-{
-    res.render('jewelry.ejs') //???
-}
+
 // making the function public
 module.exports = 
 {
