@@ -33,8 +33,6 @@ h1 {
   gap: 15px;
 }
 
-
-
 .head-icons {
   width: 1.5rem;
   height: 1.5rem;
@@ -155,4 +153,49 @@ section p {
 .collection-item p {
   font-size: 1em;
   color: #666;
+}
+
+.add-to-cart {
+  padding: 5px 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#cart {
+  position: fixed;
+  right: 20px;
+  top: 60px;
+  width: 300px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  display: none; /* Initially hidden */
+}
+
+#cart ul {
+  list-style: none;
+  padding: 0;
+}
+
+#cart ul li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+#checkout {
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.cart-icon {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
 }
