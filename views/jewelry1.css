@@ -6,28 +6,33 @@ body {
     background-color: #FBF9F1;
     color: #333;
   }
-  
+
   header {
     background-color: #FBF9F1;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
     padding: 1rem 2rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  h1 {
+}
+
+h1 {
     font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
     color: #333;
     margin: 0;
-   
-  }
-  
-  .icon-container {
-    display: grid;
-    gap: 1rem;
-  }
+    grid-column: 2; /* Center h1 in the middle column */
+    text-align: center;
+}
+
+.icon-container {
+    grid-column: 3;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+
   
   .head-icons {
     width: 1.5rem;
@@ -116,61 +121,133 @@ body {
     border-radius: 10px;
   }
   
-  /* Collection Styles */
+/* this is the style of specific item*/
+
   .collection-item {
     margin-bottom: 40px;
     text-align: center;
-  }
-  
-  .collection-item-grid {
+}
+
+.collection-item-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-  }
-  
-  .collection-item-grid img {
-    width: 100%;
-    height: 300px; /* You can adjust this height as needed */
-    object-fit: contain; /* Change to contain to prevent cutting off */
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .collection-item-grid img:hover {
-    transform: scale(1.05);
-  }
-  
-  .collection-item h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8em;
-    color: #444;
-  }
-  
-  .collection-item p {
-    font-size: 1em;
-    color: #666;
-  }
-
-  .text-continer{
-
-    background-color: #E5E1DA;
-    padding: 20px;
-    padding-bottom: 10px;
-    
-  }
-  #cost{
-    padding: 20px;
-  }
-  #element{
-    display: flex;
-    padding: 12px 0;
-    flex-direction: row;
-    border-top: 1px solid #000;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
     align-items: center;
-  }
-  
-  #express-shipping{
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.collection-item-grid img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.collection-item-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.text-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+#cost {
+    display: block;
+    font-size: 1.2em;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#description {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+#element {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-top: 1px solid #ddd;
+    color: #888;
+}
+
+.shipping-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+}
+
+
+#express-shipping {
     margin-right: 7px;
-    width: 34px;
-  }
-  
+    width: 24px;
+}
+
+.btn {
+   background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.item-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* this is more items */
+
+.more-items {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.more-items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.more-items-grid img {
+  width: 100%;
+  height: auto;
+  max-height: 150px;
+  object-fit: contain;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.more-items-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
