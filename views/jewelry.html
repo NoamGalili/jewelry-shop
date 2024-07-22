@@ -21,15 +21,15 @@
 
     <nav>
         <ul>
-            <li><a href="#home">Home</a></li>
+            <li><a href="#home" id="home-link">Home</a></li>
             <li><a href="#about">About Us</a></li>
             <li>
                 <a href="#shop" id="shop">Shop</a>
                 <div id="options" class="hidden">
-                    <p><a>Necklaces</a></p>
-                    <p><a>Rings</a></p>
-                    <p><a>Bracelets</a></p>
-                    <p><a>Earings</a></p>
+                    <p><a href="#" id="showNecklaces">Necklaces</a></p>
+                    <p><a href="#" id="showRings">Rings</a></p>
+                    <p><a href="#" id="showBracelets">Bracelets</a></p>
+                    <p><a href="#" id="showEarrings">Earrings</a></p>
                 </div>
             </li>
             <li><a href="#contact">Contact</a></li>
@@ -50,47 +50,263 @@
         </section>
 
         <section id="shop">
-            <h2>Our Collection</h2>
 
-            <div class="collection-item">
-                <div class="collection-item-grid">
-                    <img src="../public/images/necklaces/icon_necklace1.avif" alt="Necklaces Image">
-                    <img src="../public/images/necklaces/icon_necklace4.avif" alt="Necklaces Image">
-                    <img src="../public/images/necklaces/icon_necklace3.avif" alt="Necklaces Image">
+            <div id="productGrid-necklaces" class="product-grid">
+                <div class="product">
+                    <img src="../public/images/necklaces/icon_necklace1.avif" alt="necklaceImg">
+                    <div class="product-title">Necklace</div>
+                    <div class="product-price">₪329.00</div>
                 </div>
-                <h3>Necklaces</h3>
-                <p>Discover our stunning range of necklaces, perfect for any occasion.</p>
+                <div class="product">
+                    <img src="../public/images/necklaces/icon_necklace10.avif" alt="necklaceImg">
+                    <div class="product-title">Necklace</div>
+                    <div class="product-price">₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/necklaces/icon_necklace5.avif" alt="necklaceImg">
+                    <div class="product-title">Necklace</div>
+                    <div class="product-price">₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/necklaces/icon_necklace12.avif" alt="necklaceImg">
+                    <div class="product-title">Necklace</div>
+                    <div class="product-price">₪599.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/necklaces/icon_necklace9.avif" alt="necklaceImg">
+                    <div class="product-title">Necklace</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/necklaces/icon_necklace2.avif" alt="necklaceImg">
+                    <div class="product-title">Necklace</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/necklaces/icon_necklace3.avif" alt="necklaceImg">
+                    <div class="product-title">Necklace</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/necklaces/icon_necklace4.avif" alt="necklaceImg">
+                    <div class="product-title">Necklace</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/necklaces/icon_necklace11.avif" alt="Soleil">
+                    <div class="product-title">Necklace</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/necklaces/icon_necklace13.avif" alt="Soleil">
+                    <div class="product-title">Necklace</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/necklaces/icon_necklace8.avif" alt="necklaceImg">
+                    <div class="product-title">Necklace</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/necklaces/icon_necklace7.avif" alt="necklaceImg">
+                    <div class="product-title">Necklace</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
             </div>
 
-            <div class="collection-item">
-                <div class="collection-item-grid">
-                    <img src="../public/images/rings/icon_ring10.avif" alt="Rings Image">
-                    <img src="../public/images/rings/icon_ring12.avif" alt="Rings Image">
-                    <img src="../public/images/rings/icon_ring11.avif" alt="Rings Image">
+
+            <div id="productGrid-rings" class="product-grid">
+                <div class="product">
+                    <img src="../public/images/rings/icon_ring10.avif" alt="ringImg">
+                    <div class="product-title">Ring</div>
+                    <div class="product-price">₪329.00</div>
                 </div>
-                <h3>Rings</h3>
-                <p>Explore our collection of beautifully crafted rings, from engagement rings to everyday wear.</p>
+                <div class="product">
+                    <img src="../public/images/rings/icon_ring11.avif" alt="ringImg">
+                    <div class="product-title">Ring</div>
+                    <div class="product-price">₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/rings/icon_ring12.avif" alt="ringImg">
+                    <div class="product-title">Ring</div>
+                    <div class="product-price">₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/rings/icon_ring13.avif" alt="ringImg">
+                    <div class="product-title">Ring</div>
+                    <div class="product-price">₪599.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/rings/icon_ring2.avif" alt="ringImg">
+                    <div class="product-title">Ring</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/rings/icon_ring3.avif" alt="ringImg">
+                    <div class="product-title">Ring</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/rings/icon_ring4.avif" alt="ringImg">
+                    <div class="product-title">Ring</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/rings/icon_ring5.avif" alt="ringImg">
+                    <div class="product-title">Ring</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/rings/icon_ring6.avif" alt="ringImg">
+                    <div class="product-title">Ring</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/rings/icon_ring7.avif" alt="ringImg">
+                    <div class="product-title">Ring</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/rings/icon_ring8.avif" alt="ringImg">
+                    <div class="product-title">Ring</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/rings/icon_ring9.avif" alt="ringImg">
+                    <div class="product-title">Ring</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
             </div>
 
-            <div class="collection-item">
-                <div class="collection-item-grid">
-                    <img src="../public/images/bracelets/icon_bracelet10.avif" alt="Bracelets Image">
-                    <img src="../public/images/bracelets/icon_bracelet11.avif" alt="Bracelets Image">
-                    <img src="../public/images/bracelets/icon_bracelet13.avif" alt="Bracelets Image">
+            
+            <div id="productGrid-earrings" class="product-grid">
+                <div class="product">
+                    <img src="../public/images/earings/icon_earring1.avif" alt="earringsImg">
+                    <div class="product-title">Earrings</div>
+                    <div class="product-price">₪329.00</div>
                 </div>
-                <h3>Bracelets</h3>
-                <p>Browse through our selection of elegant bracelets, designed to complement any outfit.</p>
+                <div class="product">
+                    <img src="../public/images/earings/icon_earring10.avif" alt="earringsImg">
+                    <div class="product-title">Earrings</div>
+                    <div class="product-price">₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/earings/icon_earring11.avif" alt="earringsImg">
+                    <div class="product-title">Earrings</div>
+                    <div class="product-price">₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/earings/icon_earring12.avif" alt="earringsImg">
+                    <div class="product-title">Earrings</div>
+                    <div class="product-price">₪599.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/earings/icon_earring13.avif" alt="earringsImg">
+                    <div class="product-title">Earrings</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/earings/icon_earring2.avif" alt="earringsImg">
+                    <div class="product-title">Earrings</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/earings/icon_earring3.avif" alt="earringsImg">
+                    <div class="product-title">Earrings</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/earings/icon_earring4.avif" alt="earringsImg">
+                    <div class="product-title">Earrings</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/earings/icon_earring5.avif" alt="earringsImg">
+                    <div class="product-title">Earrings</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/earings/icon_earring6.avif" alt="earringsImg">
+                    <div class="product-title">Earrings</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/earings/icon_earring8.avif" alt="earringsImg">
+                    <div class="product-title">Earrings</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/earings/icon_earring9.avif" alt="earringsImg">
+                    <div class="product-title">Earrings</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
             </div>
 
-            <div class="collection-item">
-                <div class="collection-item-grid">
-                    <img src="../public/images/earings/icon_earring11.avif" alt="Earrings Image">
-                    <img src="../public/images/earings/icon_earring10.avif" alt="Earrings Image">
-                    <img src="../public/images/earings/icon_earring13.avif" alt="Earrings Image">
+            
+            <div id="productGrid-bracelets" class="product-grid">
+                <div class="product">
+                    <img src="../public/images/bracelets/icon_bracelet1.avif" alt="braceletsImg">
+                    <div class="product-title">Bracelets</div>
+                    <div class="product-price">₪329.00</div>
                 </div>
-                <h3>Earrings</h3>
-                <p>Find the perfect pair of earrings to add a touch of elegance to your look.</p>
+                <div class="product">
+                    <img src="../public/images/bracelets/icon_bracelet10.avif" alt="braceletsImg">
+                    <div class="product-title">Bracelets</div>
+                    <div class="product-price">₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/bracelets/icon_bracelet11.avif" alt="braceletsImg">
+                    <div class="product-title">Bracelets</div>
+                    <div class="product-price">₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/bracelets/icon_bracelet12.avif" alt="braceletsImg">
+                    <div class="product-title">Bracelets</div>
+                    <div class="product-price">₪599.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/bracelets/icon_bracelet13.avif" alt="braceletsImg">
+                    <div class="product-title">Bracelets</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/bracelets/icon_bracelet2.avif" alt="braceletsImg">
+                    <div class="product-title">Bracelets</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/bracelets/icon_bracelet3.avif" alt="braceletsImg">
+                    <div class="product-title">Bracelets</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/bracelets/icon_bracelet4.avif" alt="braceletsImg">
+                    <div class="product-title">Bracelets</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/bracelets/icon_bracelet5.avif" alt="braceletsImg">
+                    <div class="product-title">Bracelets</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/bracelets/icon_bracelet6.avif" alt="braceletsImg">
+                    <div class="product-title">Bracelets</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/bracelets/icon_bracelet7.avif" alt="braceletsImg">
+                    <div class="product-title">Bracelets</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
+                <div class="product">
+                    <img src="../public/images/bracelets/icon_bracelet8.avif" alt="braceletsImg">
+                    <div class="product-title">Bracelets</div>
+                    <div class="product-price">From ₪299.00</div>
+                </div>
             </div>
+
+
         </section>
 
         <section id="contact">
@@ -103,7 +319,6 @@
         <p>&copy; 2024 NTLC Jewelry. All rights reserved.</p>
     </footer>
 
-
     <div id="cart" class="cart">
         <h2>Shopping Cart</h2>
         <ul id="cart-items"></ul>
@@ -114,4 +329,3 @@
     <script src="jewelry.js"></script>
 </body>
 </html>
-
