@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>NTLC Jewelry</title>
+    <link href="./payment.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="top-header">
+            <h1 class="site-title">NTLC</h1>
+            <div class="icon-container">
+                <img class="head-icons" src="../public/images/cart-icon.png" alt="Cart Icon">
+                <img class="head-icons" src="../public/images/search-icon.png" alt="Search Icon">
+                <img class="head-icons" src="../public/images/user-icon.png" alt="User Icon" id="userIcon">
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Payment Section -->
+        <section id="payment" class="payment-section">
+            <div class="payment-container">
+                <div class="left-column">
+                  
+                    <form action="/payment" method="post">
+                        <div class="form-group">
+                            <label>Shipping Address</label>
+                            <input type="text" name="firstName" placeholder="First Name" required>
+                            <input type="text" name="lastName" placeholder="Last Name" required>
+                            <input type="text" name="address1" placeholder="Address 1" required>
+                            <input type="text" name="address2" placeholder="Address 2">
+                            <input type="text" name="city" placeholder="City" required>
+                            <input type="text" name="state" placeholder="State" required>
+                            <input type="text" name="zipCode" placeholder="Zip Code" required>
+                        </div>
+                        <div class="shipping-method form-group">
+                            <label>Shipping Method</label>
+                            <div>
+                                <input type="radio" name="shippingMethod" value="express" checked> Express Delivery with Signature $0
+                            </div>
+                            <div>
+                                <input type="radio" name="shippingMethod" value="standard"> Next Day with Signature $0
+                            </div>
+                            <div>
+                                <input type="radio" name="shippingMethod" value="scheduled"> Scheduled Delivery (Some Day available) $0
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Gift Message (optional)</label>
+                            <input type="text" name="giftMessage" placeholder="Gift Message">
+                        </div>
+                        <button type="submit">Continue</button>
+                    </form>
+                </div>
+                <div class="right-column">
+                    <div class="order-summary">
+                        <h2>Order Summary</h2>
+                        <p>Subtotal: $0</p>
+                        <p>Express Delivery with Signature: $0</p>
+                        <p>Estimated Total: $0</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 NTLC Jewelry. All rights reserved.</p>
+    </footer>
+
+    <script src="/routes/jewelry.js"></script>
+</body>
+</html>
+
+
+
+
