@@ -6,6 +6,11 @@ function getAlljewelries(req, res)
     res.render('jewelries.ejs',{ jewelries })
 }
 
+function getLogin(req, res)
+{
+    res.render('login.ejs')
+}
+
 function getJewelry(req, res)
 {
     const jewelryId =  req.query.id
@@ -17,6 +22,7 @@ function getJewelry(req, res)
 // making the function public
 module.exports = 
 {
+    getLogin,
     getAlljewelries,
     getJewelry
 }
