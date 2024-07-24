@@ -9,6 +9,7 @@ function getAlljewelries(req, res)
 function getJewelry(req, res)
 {
     const jewelryId =  req.query.id
+    //if (!jewelry) return res.status(404).send('Jewelry not found');
     const jewelry = jewelriesModel.getJewelry(jewelryId) //passing the idparameter to the function 
     res.render('jewelry.ejs',{ jewelry })
 }
