@@ -8,4 +8,10 @@ function isLoggedIn(req, res, next){
       res.redirect('/login') // מעבר לעמוד התחברות אם הוא לא מכיר אותו 
 }
 
-function foo(req, )
+function foo(req, res) {
+    res.render("fool", {username: req.session.username})
+}
+
+function loginFrom(req, res){res.render ("login", {})}
+function register (req, res){res.render("register", {})}
+
