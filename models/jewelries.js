@@ -1,8 +1,12 @@
 const { getAlljewelries } = require("../controllers/jewelries")
 
 const jewelries =  [
-    {id:1 ,jewelryName:"Jewelry 1",price:"111111111.1$"},
-    {id:2 ,jewelryName:"Jewelry 2",price:"222222222.2$"}
+    {id:1,
+      jewelryName:"Jewelry 1",
+      price:"111111111.1$"},
+    {id:2,
+      jewelryName:"Jewelry 2",
+      price:"222222222.2$"}
  ]
        
 
