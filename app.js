@@ -7,7 +7,7 @@ server.use(express.static('public'))
 
 server.get("/", jewelriesController.getAlljewelries) //redirecting / to controller.
 server.get("/login", jewelriesController.getLogin)
-server.get("/register.ejs", jewelriesController.getAlljewelries)
+server.get("/register.ejs", jewelriesController.getRegister)
 server.get("/payment.ejs", jewelriesController.getpayment)
 server.get("/credit.ejs", jewelriesController.getCredit)
 server.get("/deleteJewelry", jewelriesController.deleteJewelry)

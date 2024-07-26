@@ -13,5 +13,6 @@ function foo(req, res) {
 }
 
 function loginFrom(req, res){res.render ("login", {})}
+
 function register (req, res){res.render("register", {})}
 

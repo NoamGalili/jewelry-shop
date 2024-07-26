@@ -10,7 +10,7 @@ const jewelries =  [
  ]
        
 
- function getAllJewelries() //allowing the rest of the project to access the jewleries json 
+ function getAllJewelriess() //allowing the rest of the project to access the jewleries json 
  {
     return jewelries
  }
@@ -28,6 +28,6 @@ const jewelries =  [
  }
  module.exports = 
  {
-    getAllJewelries,
+   getAllJewelriess,
     getJewelry
  }

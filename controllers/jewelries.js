@@ -2,7 +2,7 @@ const jewelriesModel = require('../models/jewelries')
 
 function getAlljewelries(req, res)
 {
-    const jewelries = jewelriesModel.getAllJewelries()
+    const jewelries = jewelriesModel.getAllJewelriess()
     res.render('home.ejs',{ jewelries })
 }
 
