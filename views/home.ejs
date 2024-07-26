@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title>NTLC Jewelry</title>
-    <link href="./jewelry.css" rel="stylesheet">
+    <link href="../public/styles/home.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -16,8 +16,7 @@
                 <span id="cart-count" class="cart-count">0</span>
             </div>
             <img class="head-icons" src="../public/images/search-icon.png" alt="Search Icon">
-            <a href="connection.html"><img class="head-icons" src="../public/images/user-icon.png" alt="User Icon" id="userIcon"></a>
-            
+            <img class="head-icons" src="../public/images/user-icon.png" alt="User Icon" id="userIcon">
         </div>
     </header>
 
@@ -50,31 +49,6 @@
             <h2>About Us</h2>
             <p>At NTLC Jewelry, we pride ourselves on offering high-quality, handcrafted jewelry. Our artisans are dedicated to creating unique designs that stand the test of time.</p>
         </section>
-        
-        
-        <section id="shop">
-            <h2>Our Collection</h2>
-            <h2>Necklaces</h2>
-            <p>Discover our stunning range of necklaces, perfect for any occasion.</p>
-
-            <% for(i=0; i < jewelries.length; i++) { %>
-            
-            <jewelry>    
-            
-            <div class="collection-item">
-                <div class="collection-item-grid">
-                    <div>
-                        <jewelryName><h4><%=jewelries[i].jewelryName %></h4></jewelryName>
-                    <img src="./images/necklaces/icon_necklace1.avif" alt="Necklaces Image">
-                    <h5><%=jewelries[i].price %></h5>
-                </div>
-                </div>
-               
-            </div>
-          </jewelry>
-          <% } %>
-
-        </section>
 
         <section id="contact">
             <h2>Contact Us</h2>
@@ -86,6 +60,13 @@
         <p>&copy; 2024 NTLC Jewelry. All rights reserved.</p>
     </footer>
 
-    <script src="jewelry.js"></script>
+    <div id="cart" class="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: ₪<span id="cart-total">0</span></p>
+        <button id="checkout">Checkout</button>
+    </div>
+
+    <script src="../public/javascript/home.js"></script>
 </body>
 </html>
