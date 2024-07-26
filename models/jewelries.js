@@ -1,5 +1,3 @@
-const { getAlljewelries } = require("../controllers/jewelries")
-
 const jewelries =  [
     {id:1,
       jewelryName:"Jewelry 1",
