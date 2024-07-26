@@ -17,6 +17,9 @@
             </div>
             <img class="head-icons" src="/images/search-icon.png" alt="Search Icon">
             <a href="login.ejs"><img class="head-icons" src="/images/user-icon.png" alt="User Icon" id="userIcon"></a>
+            <div>
+                <a href="myprofile.ejs" class="profile-link">my profile</a>
+            </div>
         </div>
     </header>
 
@@ -76,6 +79,13 @@
     <footer>
         <p>&copy; 2024 NTLC Jewelry. All rights reserved.</p>
     </footer>
+
+    <div id="cart" class="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: ₪<span id="cart-total">0</span></p>
+        <button id="checkout">Checkout</button>
+    </div>
 
     <script src="/javascript/credit.js"></script>
 </body>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>My Profile - NTLC Jewelry</title>
+    <link href="/styles/myprofile.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>My Profile</h1>
+    </header>
+
+    <main>
+        <section id="user-details">
+            <h2>Your Details</h2>
+            <p><strong>Username:</strong> <%= user.Username %></p>
+            <p><strong>Email:</strong> <%= user.UserMail %></p>
+            <img src="<%= user.UserPhoto %>" alt="User Photo" class="user-photo">
+        </section>
+
+        <section id="previous-orders">
+            <h2>Previous Orders</h2>
+            <% if (orders.length > 0) { %>
+                <ul>
+                    <% orders.forEach(order => { %>
+                        <li>Order Number: <%= order.OrderNumber %>, Total Items: <%= order.items.length %>, Total Price: ₪<%= order.totalPrice %></li>
+                    <% }); %>
+                </ul>
+            <% } else { %>
+                <p>No previous orders.</p>
+            <% } %>
+        </section>
+
+        <section id="current-cart">
+            <h2>Current Cart</h2>
+            <% if (cart.items.length > 0) { %>
+                <ul>
+                    <% cart.items.forEach(item => { %>
+                        <li><%= item.JewelryName %> - ₪<%= item.Price %></li>
+                    <% }); %>
+                </ul>
+                <p>Total: ₪<%= cart.total %></p>
+            <% } else { %>
+                <p>Your cart is empty.</p>
+            <% } %>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 NTLC Jewelry. All rights reserved.</p>
+    </footer>
+
+    <script src="/javascript/myprofile.js"></script>
+</body>
+</html>

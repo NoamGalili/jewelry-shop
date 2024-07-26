@@ -61,6 +61,16 @@ body {
   nav li {
     margin: 0;
   }
+  .profile-link {
+    font-family: 'Playfair Display', serif;
+    color: #000;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  .profile-link:hover {
+    color: #555;
+  }
   
   .hidden { 
     display: none;
@@ -157,4 +167,49 @@ button:hover {
 }
 .shipping-method {
     margin-bottom: 20px;
+}
+
+.add-to-cart {
+  padding: 5px 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#cart {
+  position: fixed;
+  right: 20px;
+  top: 60px;
+  width: 300px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  display: none; /* Initially hidden */
+}
+
+#cart ul {
+  list-style: none;
+  padding: 0;
+}
+
+#cart ul li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+#checkout {
+  padding: 10px;
+  background-color: #92C7CF;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.cart-icon {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
 }

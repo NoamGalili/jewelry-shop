@@ -44,6 +44,18 @@ h1 {
   transform: scale(1.2);
 }
 
+.profile-link {
+  font-family: 'Playfair Display', serif;
+  color: #000;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.profile-link:hover {
+  color: #555;
+}
+
+
 /* Navigation Styles */
 nav {
   background-color: #92C7CF;
