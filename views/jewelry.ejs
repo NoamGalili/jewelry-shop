@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title>NTLC Jewelry</title>
-    <link href="/styles/jewelry.css" rel="stylesheet">
+    <link href="/styles/all.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -13,15 +13,26 @@
         <div class="icon-container">
             <img class="head-icons" src="/images/cart-icon.png" alt="Cart Icon">
             <img class="head-icons" src="/images/search-icon.png" alt="Search Icon">
-            <img class="head-icons" src="/images/user-icon.png" alt="User Icon" id="userIcon">
+            <a href="login.ejs"><img class="head-icons" src="/images/user-icon.png" alt="User Icon" id="userIcon"></a>
+            <div>
+                <a href="myprofile.ejs" class="profile-link">my profile</a>
+            </div>
         </div>
     </header>
 
     <nav>
         <ul>
-            <li><a href="#home">Home</a></li>
+            <li><a href="#home" id="home-link">Home</a></li>
             <li><a href="#about">About Us</a></li>
-            <li><a href="#shop">Shop</a></li>
+            <li class="dropdown">
+                <a href="#shop" id="shop">Shop</a>
+                <div id="options" class="dropdown-content hidden">
+                    <p><a href="jewelry.ejs" id="showNecklaces">Necklaces</a></p>
+                    <p><a href="jewelry.ejs" id="showRings">Rings</a></p>
+                    <p><a href="jewelry.ejs" id="showBracelets">Bracelets</a></p>
+                    <p><a href="jewelry.ejs" id="showEarrings">Earrings</a></p>
+                </div>
+            </li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -72,6 +83,13 @@
     <footer>
         <p>&copy; 2024 NTLC Jewelry. All rights reserved.</p>
     </footer>
+
+    <div id="cart" class="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: ₪<span id="cart-total">0</span></p>
+        <a href="payment.ejs"><button id="checkout">Checkout</button></a>
+    </div>
 
     <script src="/javascript/jewelry.js"></script>
 </body>
