@@ -11,6 +11,21 @@ function getLogin(req, res)
     res.render('login.ejs')
 }
 
+function getRegister (req, res)
+{
+    res.render('register.ejs')
+}
+
+function getCredit (req, res)
+{
+    res.render('credit.ejs')
+}
+
+function getpayment (req, res)
+{
+    res.render('payment.ejs')
+}
+
 function getJewelry(req, res)
 {
     const jewelryId =  req.query.id
@@ -33,7 +48,10 @@ function  deleteJewelry(req, res){
 module.exports = 
 {
     getLogin,
+    getRegister,
     getAlljewelries,
     getJewelry,
+    getpayment,
+    getCredit,
     deleteJewelry
 }
