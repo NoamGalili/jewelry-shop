@@ -1,3 +1,5 @@
+document.addEventListener('DOMContentLoaded', function() {
+    
 document.getElementById('cart-button').addEventListener('click', function() {
     toggleCartVisibility();
 });
@@ -125,3 +127,6 @@ function toggleCartVisibility() {
         cart.style.display = 'none';
     }
 }
+});
+
+

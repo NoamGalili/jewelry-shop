@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title>NTLC Jewelry</title>
-    <link href="./jewelry.css" rel="stylesheet">
+    <link href="./jewelry1.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -15,18 +15,16 @@
             <img class="head-icons" src="../public/images/search-icon.png" alt="Search Icon">
             <img class="head-icons" src="../public/images/user-icon.png" alt="User Icon" id="userIcon">
         </div>
+    </header>
 
-        </header>
-
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#shop">Shop</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
     <main>
         <section id="home" class="hero">
@@ -35,32 +33,34 @@
                 <p>Your one-stop shop for exquisite jewelry pieces. Explore our collection and find the perfect piece to adorn yourself or your loved ones.</p>
             </div>
         </section>
-
-        <section id="about">
-            <h2>About Us</h2>
-            <p>At NTLC Jewelry, we pride ourselves on offering high-quality, handcrafted jewelry. Our artisans are dedicated to creating unique designs that stand the test of time.</p>
-        </section>
-        
-        
         
         <section id="shop">
-            <h2>Our Collection</h2>
-            <h2>Necklaces</h2>
-            <p>Discover our stunning range of necklaces, perfect for any occasion.</p>            
-            <jewelry>    
-            
+            <h2>Jewelry Collection</h2>
             <div class="collection-item">
                 <div class="collection-item-grid">
-                    <div>
-                        <jewelryName><h4><%=jewelry.jewelryName %></h4></jewelryName>
-                    <img src="../public/images/necklaces/icon_necklace1.avif" alt="Necklaces Image">
-                    <h5><%=jewelry.price %></h5>
+                    <div class="text-container">
+                        <span id="cost">Cost in sale: <%= mainProduct.isOnSale ? mainProduct.salePrice : mainProduct.price %>₪</span>
+                        <br><br>
+                        <span id="description"><%= mainProduct.description %></span>
+                        <br><br>
+                        <div class="shipping-container">
+                            <span id="element">Complimentary Shipping & Returns</span>
+                            <img id="express-shipping" src="/public/images/express-shipping-icon.png" alt="Express Shipping">
+                        </div>
+                        <button type="button" class="btn btn-info">Add To Bag</button>
+                    </div>
+                    <img src="<%= mainProduct.image %>" alt="Necklace Image">
                 </div>
-                </div>
-               
+                <h3>More of the Collection</h3>
             </div>
-        </jewelry>
 
+            <div class="more-items">
+                <div class="more-items-grid">
+                    <% moreItems.forEach(item => { %>
+                        <img src="<%= item.image %>" alt="<%= item.name %> Image">
+                    <% }); %>
+                </div>
+            </div>
         </section>
 
         <section id="contact">
@@ -73,6 +73,6 @@
         <p>&copy; 2024 NTLC Jewelry. All rights reserved.</p>
     </footer>
 
-    <script src="jewelry.js"></script>
+    <script src="./jewelry.js"></script>
 </body>
 </html>
