@@ -50,7 +50,7 @@ module.exports =
     getLogin,
     getRegister,
     getAlljewelries,
-    getJewelry,
+    getJewelry, 
     getpayment,
     getCredit,
     deleteJewelry
