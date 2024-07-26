@@ -9,23 +9,36 @@
 </head>
 <body>
     <header>
-        <div class="top-header">
-            <h1 class="site-title">NTLC</h1>
-            <div class="icon-container">
+        <h1>NTLC</h1>
+        <div class="icon-container">
+            <div id="cart-button">
                 <img class="head-icons" src="../public/images/cart-icon.png" alt="Cart Icon">
-                <img class="head-icons" src="../public/images/search-icon.png" alt="Search Icon">
-                <img class="head-icons" src="../public/images/user-icon.png" alt="User Icon" id="userIcon">
+                <span id="cart-count" class="cart-count">0</span>
             </div>
+            <img class="head-icons" src="../public/images/search-icon.png" alt="Search Icon">
+            <img class="head-icons" src="../public/images/user-icon.png" alt="User Icon" id="userIcon">
         </div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#shop">Shop</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
     </header>
+
+
+
+    <nav>
+        <ul>
+            <li><a href="#home" id="home-link">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li>
+                <a href="#shop" id="shop">Shop</a>
+                <div id="options" class="hidden">
+                    <p><a href="#" id="showNecklaces">Necklaces</a></p>
+                    <p><a href="#" id="showRings">Rings</a></p>
+                    <p><a href="#" id="showBracelets">Bracelets</a></p>
+                    <p><a href="#" id="showEarrings">Earrings</a></p>
+                </div>
+            </li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
 
     <main>
         <!-- Payment Section -->
@@ -78,7 +91,7 @@
         <p>&copy; 2024 NTLC Jewelry. All rights reserved.</p>
     </footer>
 
-    <script src="/routes/jewelry.js"></script>
+    <script src="./jewelry.js"></script>
 </body>
 </html>
 
