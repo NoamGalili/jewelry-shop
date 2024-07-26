@@ -3,7 +3,7 @@ const jewelriesModel = require('../models/jewelries')
 function getAlljewelries(req, res)
 {
     const jewelries = jewelriesModel.getAllJewelries()
-    res.render('jewelries.ejs',{ jewelries })
+    res.render('home.ejs',{ jewelries })
 }
 
 function getLogin(req, res)
