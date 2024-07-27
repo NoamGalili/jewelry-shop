@@ -22,6 +22,7 @@ function getJewelry(req, res)
     }
 }
 
+
 function  deleteJewelry(req, res)
 {
     const jewelryId= req.query.id
