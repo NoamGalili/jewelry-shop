@@ -11,7 +11,9 @@ router.route("/credit.ejs").get(usersController.getCredit)
 
 //---add stuff that dont belong to this stream here
 
-
+router.route("/Myorders.ejs").get(usersController.getLogin)
+router.route("/Myprofile.ejs").get(usersController.getLogin)
+router.route("/branches.ejs").get(usersController.getLogin)
 
 //---
 module.exports = router

@@ -28,6 +28,16 @@ function getMyorders (req, res)
     res.render('myorders.ejs')
 }
 
+function getMyprofill (req, res)
+{
+    res.render('myprofile.ejs')
+}
+
+function branches (req, res)
+{
+    res.render('branches.ejs')
+}
+
 
 //---
 
