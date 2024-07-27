@@ -13,11 +13,10 @@ const jewelries =  [
     return jewelries
  }
 
- function deleteJewelry(id){
+ function deleteJewelry(id)
+ {
    const indexToDelete= jewelries.findIndex(Jewelry => Jewelry.id ==id)
    jewelries.splice(indexToDelete, 1)
-
-   
  }
 
  function getJewelry(id) //allowing the rest of the project to access the jewleries json 
