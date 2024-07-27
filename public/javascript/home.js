@@ -86,28 +86,7 @@ function toggleCartVisibility() {
 }
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const searchIcon = document.getElementById('searchIcon');
-    const searchBar = document.getElementById('searchBar');
-    const searchButton = document.getElementById('searchButton');
-    const searchInput = document.getElementById('searchInput');
-
-    searchIcon.addEventListener('click', function() {
-        searchBar.classList.toggle('visible');
-        searchInput.focus(); // Focus the input when search bar is shown
-    });
-
-    searchButton.addEventListener('click', function() {
-        const query = searchInput.value.trim();
-        if (query) {
-            window.location.href = `/search?query=${encodeURIComponent(query)}`;
-        }
-    });
-
-    // Optional: allow pressing Enter to trigger the search
-    searchInput.addEventListener('keypress', function(event) {
-        if (event.key === 'Enter') {
-            searchButton.click();
-        }
-    });
+document.getElementById('searchIcon').addEventListener('click', function() {
+    var searchBar = document.getElementById('searchBar');
+    searchBar.classList.toggle('hidden');
 });
