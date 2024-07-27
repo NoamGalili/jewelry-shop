@@ -21,10 +21,15 @@ function getCredit (req, res)
     res.render('credit.ejs')
 }
 
+//---add stuff that dont belong to this stream here
+
 function getMyorders (req, res)
 {
     res.render('myorders.ejs')
 }
+
+
+//---
 
 module.exports = 
 {
