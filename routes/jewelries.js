@@ -1,16 +1,18 @@
-const express= require ('express')
+const express = require('express')
 
 const router = express.Router()
 
-const articlesController = require('../controllers/jewelries')
+const jewelriesController = require('../controllers/jewelries')
 
-router.router("/").get(jewelriesController.getAlljewelries) //redirecting / to controller.
-router.router("/jewelry").get(jewelriesController.getJewelry) 
-router.router("/deleteJewelry").get(jewelriesController.deleteJewelry)
+router.route("/").get(jewelriesController.getAlljewelries) //redirecting / to controller.
+router.route("/jewelry").get(jewelriesController.getJewelry) 
+router.route("/deleteJewelry").get(jewelriesController.deleteJewelry)
 
-router.router("/login").get(jewelriesController.getLogin)
-router.router("/register.ejs").get(jewelriesController.getRegister)
-router.router("/payment.ejs").get( jewelriesController.getpayment)
-router.router("/credit.ejs").get(jewelriesController.getCredit)
-///server.get("/deleteJewelry", jewelriesController.deleteJewelry)
-module.exports= router
+//might move to users route??
+router.route("/login").get(jewelriesController.getLogin)
+router.route("/register.ejs").get(jewelriesController.getRegister)
+router.route("/payment.ejs").get( jewelriesController.getpayment)
+router.route("/credit.ejs").get(jewelriesController.getCredit)
+//----
+
+module.exports = router
