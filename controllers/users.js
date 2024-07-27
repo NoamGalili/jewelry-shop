@@ -21,10 +21,16 @@ function getCredit (req, res)
     res.render('credit.ejs')
 }
 
+function getMyorders (req, res)
+{
+    res.render('myorders.ejs')
+}
+
 module.exports = 
 {
     getLogin,
     getRegister,
     getpayment,
-    getCredit
+    getCredit,
+    getMyorders
 }
