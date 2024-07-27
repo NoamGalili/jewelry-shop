@@ -566,14 +566,14 @@ body {
 .search-bar {
   display: none; /* Initially hidden */
   position: absolute;
-  top: 3rem; /* Adjust the top position to move it below the icons */
-  right: 0;
+  top: 4rem; /* Adjust the top position to move it below the icons */
+  right: 2rem; /* Ensure it's positioned on the right */
   padding: 0.5rem;
   background-color: #FBF9F1;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   z-index: 1000; /* Ensure it appears above other elements */
-  text-align: right; /* Align the search bar items to the right */
+  text-align: right;
   display: flex;
   align-items: center; /* Center align items vertically */
 }
