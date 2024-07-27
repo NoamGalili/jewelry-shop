@@ -13,3 +13,5 @@ To use the server write -
 
 npm i - install dependencies
 npm install mongoose - enables working with DB
+
+testing push
