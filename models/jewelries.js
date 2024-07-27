@@ -1,7 +1,7 @@
 
        
 
- function getAllJewelries() //allowing the rest of the project to access the jewleries json 
+ async function getAllJewelries() //allowing the rest of the project to access the jewleries json 
  {
   const { MongoClient } = require('mongodb');
   const uri  = 'mongodb://127.0.0.1:27017/';

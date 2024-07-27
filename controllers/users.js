@@ -11,7 +11,7 @@ function getRegister (req, res)
     res.render('register.ejs')
 }
 
-function getpayment (req, res)
+function getPayment (req, res)
 {
     res.render('payment.ejs')
 }
@@ -23,12 +23,12 @@ function getCredit (req, res)
 
 //---add stuff that dont belong to this stream here
 
-function getMyorders (req, res)
+function getMyOrders (req, res)
 {
     res.render('myorders.ejs')
 }
 
-function getMyprofill (req, res)
+function getMyProfile (req, res)
 {
     res.render('myprofile.ejs')
 }
@@ -45,7 +45,7 @@ module.exports =
 {
     getLogin,
     getRegister,
-    getpayment,
+    getPayment,
     getCredit,
-    getMyorders
+    getMyOrders
 }
