@@ -1,4 +1,27 @@
-       
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+
+const Jewleries = new Schema({
+
+      _id:{},
+      JewelryType:{ type: String, required: true },
+      JewelryColor:{ type: String, required: true },
+      JewelryName:{ type: String, required: true },
+      JewelryPhoto:{ type: String, required: true },
+      JewelryPrice:{ type: Number, required: true },
+      JewelryDescription:{ type: String, required: true },
+      JewelryAddDate:{ type: Date, required: true, default: Date.now },
+      JewelryAvaliableStock:{ type: Number, required: true },
+      JewelryAmountOfOrders:{ type: Number, required: true },
+      JewelryPhoto:{ type: String, required: true} ,
+      JewelryID:{ type: String, required: true, unique: true }
+})
+
+
+
+
+
 
  async function getAllJewelries() //allowing the rest of the project to access the jewleries json 
  {
@@ -30,20 +53,11 @@
     const uri  = 'mongodb://0.0.0.0:27017/';
     const client = new MongoClient(uri);
     await client.connect();
-    const jewelries = await client.db('NTLC').collection('Jewleries').find();
+    const jewelries = await client.db('NTLC').collection('Jewleries').findOne({id:new (id)});
     return await jewelries.toArray()
 
-    //return jewelries.filter(Jewelry => Jewelry.id == id)[0];
  }
 
- async function getJewelryByID(jewelryID) 
- {
-    const jewelryItem = await Jewelry.findOne({ jewelryID });
-    return jewelryItem;
-}
- 
- module.exports = getJewelryByID;
- 
  function deleteJewelry(id)
  {
    const indexToDelete= jewelries.findIndex(Jewelry => Jewelry.id == id)
@@ -54,5 +68,6 @@
  module.exports = 
  {
    getAllJewelries,
-    getJewelry
+   getJewelry,
+   deleteJewelry
  }
