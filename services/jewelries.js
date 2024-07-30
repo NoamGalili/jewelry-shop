@@ -15,7 +15,7 @@ const deleteJewelry = async (id) =>
   return await Jewelry.findById(id);
 }
 
-const getJewelriesByType= async (type) => 
+const getJewelriesByType = async (type) => 
     {
       return await Jewelry.findByType(type);
     }

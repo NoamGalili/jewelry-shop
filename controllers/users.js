@@ -39,10 +39,16 @@ function branches (req, res)
 }
 
 
+function getforgetpassword (req, res)
+{
+    res.render('forgetpassword.ejs')
+}
+
 //---
 
 module.exports = 
 {
+    getforgetpassword,
     getLogin,
     getRegister,
     getPayment,
