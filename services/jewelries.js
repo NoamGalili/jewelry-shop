@@ -1,10 +1,23 @@
 const Jewelry = require('../models/jewelries');
 
+const getAllJewelries = async () => {
+  try
+  {
+    const jewelries = await Jewelry.find({});
+    return jewelries;
+  } 
+  catch (error) 
+  {
+    console.error('Error fetching jewelries:', error);
+    throw error;
+  }
+};
+/*
 async function getAllJewelries() 
 {
   return await Jewelry.find({});
 }
-/*
+
 const getJewelryByID = async (id) => 
 {
   return await Jewelry.findById(id);
