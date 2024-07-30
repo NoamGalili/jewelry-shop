@@ -7,7 +7,6 @@ connectDB();
 
 const Jewleries = new Schema({
 
-      _id:{},
       JewelryID:{ type: String, required: true, unique: true },
       JewelryType:{ type: String, required: true },
       JewelryColor:{ type: String, required: true },
@@ -17,8 +16,7 @@ const Jewleries = new Schema({
       JewelryDescription:{ type: String, required: true },
       JewelryAddDate:{ type: Date, required: true, default: Date.now },
       JewelryAvaliableStock:{ type: Number, required: true },
-      JewelryAmountOfOrders:{ type: Number, required: true },
-      JewelryPhoto:{ type: String, required: true}
+      JewelryAmountOfOrders:{ type: Number, required: true, default: 0 },
       
 })
 

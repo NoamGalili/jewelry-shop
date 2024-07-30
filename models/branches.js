@@ -7,7 +7,6 @@ connectDB();
 
 const Branches = new Schema({
 
-    _id:{},
     BranchId:{ type: Number, required: true, unique: true },
     BranchName:{ type: String, required: true },
     BranchCoordinates:{ type: String, required: true },

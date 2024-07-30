@@ -7,7 +7,6 @@ connectDB();
 
 const Orders = new Schema({
 
-    _id:{},
     OrderID:{ type: Number, required: true, unique: true },
     CustomerID:{ type: String, required: true},
     OrderAddress:{ type: String, required: true}
