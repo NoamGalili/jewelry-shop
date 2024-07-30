@@ -33,7 +33,7 @@ const createJewelry = async (jewelryData) =>
       JewelryPhoto: jewelryData.JewelryPhoto,
       JewelryPrice: jewelryData.JewelryPrice,
       JewelryDescription: jewelryData.JewelryDescription,
-      JewelryAddDate: jewelryData.JewelryAddDate || Date.now(),
+      JewelryAddDate: (Date.now()).toString(),
       JewelryAvaliableStock: jewelryData.JewelryAvaliableStock,
       JewelryAmountOfOrders: 0
     });
