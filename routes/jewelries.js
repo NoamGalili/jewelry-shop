@@ -5,6 +5,7 @@ const jewelriesController = require('../controllers/jewelries')// bringing the j
 router.route("/").get(jewelriesController.getAlljewelries) //redirecting / to controller.
 router.route("/jewelry.ejs").get(jewelriesController.getJewelryByID) 
 router.route("/deleteJewelry.ejs").get(jewelriesController.deleteJewelry)
+router.route("/addjewelry.ejs").get(jewelriesController.addJewelry)
 
 
 module.exports = router
