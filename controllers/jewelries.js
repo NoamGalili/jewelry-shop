@@ -34,10 +34,14 @@ function addJewelry(req, res)
     res.render('addjewelry.ejs')
 }
 
+const searchJewelry = async (req, res)=> {
+    const jewlery= await jewelriesService.getJewelriesByType(req.params.type)
+    res.json(jewlery)
+}
 
 module.exports = 
 {
-    
+    searchJewelry,
     addJewelry,
     getAlljewelries,
     getJewelryByID, 
