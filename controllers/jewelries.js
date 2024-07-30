@@ -2,10 +2,16 @@ const jewelriesService = require('../services/jewelries')
 
 function getAlljewelries(req, res)
 {
-    
     const jewelries = jewelriesService.getAllJewelries()
+    if(jewelries == undefined)
+        {
+            res.status(404).render("404.ejs") //check how to create a custume 404 page...
+        }
    // res.render('home.ejs',{ jewelries })
+   else
+    {
     res.json(jewelries);
+    }
 }
 
 function getJewelryByID(req, res)
