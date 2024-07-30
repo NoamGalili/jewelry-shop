@@ -45,22 +45,39 @@
     
 
     <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h2>Welcome to NTLC Jewelry</h2>
-                <p>Your one-stop shop for exquisite jewelry pieces. Explore our collection and find the perfect piece to adorn yourself or your loved ones.</p>
-            </div>
-        </section>
+    
+        <h1>Add New Jewelry</h1>
+    <form id="jewelryForm">
+        <label for="jewelryID">Jewelry ID:</label>
+        <input type="text" id="jewelryID" name="jewelryID" required><br>
 
-        <section id="about">
-            <h2>About Us</h2>
-            <p>At NTLC Jewelry, we pride ourselves on offering high-quality, handcrafted jewelry. Our artisans are dedicated to creating unique designs that stand the test of time.</p>
-        </section>
+        <label for="jewelryType">Jewelry Type:</label>
+        <input type="text" id="jewelryType" name="jewelryType" required><br>
 
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Have questions? Reach out to us at <a href="mailto:info@ntlcjewelry.com">info@ntlcjewelry.com</a> or call us at (123) 456-7890.</p>
-        </section>
+        <label for="jewelryColor">Jewelry Color:</label>
+        <input type="text" id="jewelryColor" name="jewelryColor" required><br>
+
+        <label for="jewelryName">Jewelry Name:</label>
+        <input type="text" id="jewelryName" name="jewelryName" required><br>
+
+        <label for="jewelryPhoto">Jewelry Photo URL:</label>
+        <input type="text" id="jewelryPhoto" name="jewelryPhoto" required><br>
+
+        <label for="jewelryPrice">Jewelry Price:</label>
+        <input type="number" id="jewelryPrice" name="jewelryPrice" required><br>
+
+        <label for="jewelryDescription">Jewelry Description:</label>
+        <textarea id="jewelryDescription" name="jewelryDescription" required></textarea><br>
+
+        <label for="jewelryAvaliableStock">Jewelry Available Stock:</label>
+        <input type="number" id="jewelryAvaliableStock" name="jewelryAvaliableStock" required><br>
+
+        <label for="jewelryAmountOfOrders">Jewelry Amount of Orders:</label>
+        <input type="number" id="jewelryAmountOfOrders" name="jewelryAmountOfOrders" required><br>
+
+        <button type="submit">Add Jewelry</button>
+    </form>
+
     </main>
 
     <footer>
@@ -74,6 +91,6 @@
         <a href="payment.ejs"><button id="checkout">Checkout</button></a>
     </div>
 
-    <script src="/javascript/home.js"></script>
+    <script src="/javascript/addjewelry.js"></script> 
 </body>
 </html>

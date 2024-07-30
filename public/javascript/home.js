@@ -15,12 +15,6 @@ document.getElementById('shop').addEventListener('click', function(event) {
 });
 
 
-document.getElementById('home-link').addEventListener('click', function(event) {
-    event.preventDefault(); // Prevents the link from navigating
-    document.getElementById('home').style.display = 'block';
-    document.getElementById('about').style.display = 'block';
-});
-
 document.querySelectorAll('.add-to-cart').forEach(button => {
     button.addEventListener('click', function() {
         var product = this.closest('.product');
