@@ -14,7 +14,7 @@ function getJewelryByID(req, res)
 
     if(jewelry == undefined)
     {
-        res.status(404).send("jewelry not found") //check how to create a custume 404 page...
+        res.status(404).render("404.ejs") //check how to create a custume 404 page...
     }
     else
     {
