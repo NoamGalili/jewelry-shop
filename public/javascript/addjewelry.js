@@ -15,4 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const jewelryAvaliableStock = document.getElementById('jewelryAvaliableStock').value;
         const jewelryAmountOfOrders = document.getElementById('jewelryAmountOfOrders').value;
     });
+
+    funct(jewelryForm)
 });
