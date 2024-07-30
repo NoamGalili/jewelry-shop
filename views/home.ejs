@@ -52,6 +52,20 @@
             </div>
         </section>
 
+        <h1>Jewelry Collection</h1>
+        <ul>
+          <% jewelries.forEach(jewelry => { %>
+            <li>
+              <h2><%= jewelry.JewelryName %></h2>
+              <p>Type: <%= jewelry.JewelryType %></p>
+              <p>Color: <%= jewelry.JewelryColor %></p>
+              <p>Price: <%= jewelry.JewelryPrice %></p>
+              <p>Description: <%= jewelry.JewelryDescription %></p>
+              <img src="<%= jewelry.JewelryPhoto %>" alt="<%= jewelry.JewelryName %>">
+            </li>
+          <% }) %>
+        </ul>
+        
     </main>
 
     <footer>

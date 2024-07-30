@@ -12,17 +12,15 @@ const jewelries = require('./routes/jewelries') //if we want to add more routes 
 const users = require('./routes/users')
 const orders = require('./routes/orders')
 const branches = require('./routes/branches')
-<<<<<<< HEAD
+
 const api= require('./routes/api')
 const jewelriesController= require('./controllers/jewelries')
 //server.use(express.static('public'))
 server.use(express.json());
-=======
-const api = require('./routes/api')
->>>>>>> 3e819b91519fa49e951e9e6ea3ab1ed1f6f2ad83
+
 
 //server.use(jewelries)
-//server.use(users)
+//server.use(users
 //server.use(orders)
 //server.use(branches)
 //server.use(api)

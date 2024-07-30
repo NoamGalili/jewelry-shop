@@ -1,12 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-<<<<<<< HEAD
 
-=======
-const connectDB = require('../db');
-connectDB();
->>>>>>> 3e819b91519fa49e951e9e6ea3ab1ed1f6f2ad83
 
 
 const Branches = new Schema({
