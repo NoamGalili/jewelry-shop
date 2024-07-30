@@ -1,0 +1,3 @@
+# git.gitignore file
+node_modules/
+public/environment.env

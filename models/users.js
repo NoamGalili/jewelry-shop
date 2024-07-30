@@ -11,12 +11,11 @@ function generateRandomSalt()
 */
 const Users = new Schema({
 
-    _id:{},
     UserID:{ type: String, required: true, unique: true },
     UserType:{ type: String, required: true, default: 'User' },
     Username:{ type: String, required: true, unique: true},
     UserMail:{ type: String, unique: true },
-    UserPasswordSHA256Hash:{type: String, required: true },
+    UserPasswordSHA256Hash:{ type: String, required: true },
     UserSalt:{ type: String, required: true }
       
 })
