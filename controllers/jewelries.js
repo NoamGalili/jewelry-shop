@@ -1,11 +1,10 @@
-const jewelriesService = require('../services/jewelry')
+const jewelriesService = require('../services/jewelries')
 
 function getAlljewelries(req, res)
 {
     const jewelries = jewelriesService.getAllJewelries()
     res.render('home.ejs',{ jewelries })
 }
-
 
 function getJewelryByID(req, res)
 {

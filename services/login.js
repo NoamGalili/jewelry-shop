@@ -1,4 +1,4 @@
-const User= require("../models/users");
+const User = require("../models/users");
 
 //פונקציה למציאת המשתמש בעל הסיסמה הספציפית 
 async function login(username, password){
