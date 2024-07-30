@@ -15,9 +15,15 @@ function branches (req, res)
     res.render('branches.ejs')
 }
 
+function aboutus (req, res)
+{
+    res.render('aboutus.ejs')
+}
+
 module.exports = 
 {
     addBranch,
     deleteBranch,
-    branches
+    branches,
+    aboutus
 }
