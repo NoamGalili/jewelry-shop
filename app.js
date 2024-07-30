@@ -7,7 +7,7 @@ const jewelries = require('./routes/jewelries') //if we want to add more routes 
 const users = require('./routes/users')
 const orders = require('./routes/orders')
 const branches = require('./routes/branches')
-const api= require('./routes/api')
+const api = require('./routes/api')
 
 server.use(express.static('public'))
 

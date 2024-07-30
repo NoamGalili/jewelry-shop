@@ -4,11 +4,24 @@ async function getAllJewelries()
 {
   return await Jewelry.find({});
 }
-
+/*
 const getJewelryByID = async (id) => 
 {
   return await Jewelry.findById(id);
 }
+*/
+const getJewelryByID = async (id) => {
+  try 
+  {
+    const Jewelry = await Jewelry.findById(id);
+    return Jewelry;
+  } 
+  catch 
+  {
+    console.error('Error fetching product by ID:', e);
+  }
+};
+
 
 const deleteJewelry = async (id) => 
 {
@@ -42,6 +55,11 @@ const createJewelry = async (jewelryData) =>
     console.error('Error creating jewelry:', error);
     throw error;
   }
+}
+
+const getJewelriesByType = async (type) =>
+{
+  return false;
 }
 
 module.exports = {
