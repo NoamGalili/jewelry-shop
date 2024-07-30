@@ -118,3 +118,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+async function search(){
+    const search= document.getElementById('searchInput').value
+
+}
