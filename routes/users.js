@@ -14,7 +14,7 @@ router.route("/credit.ejs").get(usersController.getCredit)
 router.route("/Myorders.ejs").get(usersController.getLogin)
 router.route("/Myprofile.ejs").get(usersController.getLogin)
 router.route("/branches.ejs").get(usersController.getLogin)
-router.route("/forgetpassword.ejs").get(usersController.getLogin)
+router.route("/forgetpassword.ejs").get(usersController.getforgetpassword)
 
 //---
 module.exports = router
