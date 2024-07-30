@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
+/*
 const connectDB = require('../db'); // Adjust the path as needed
 connectDB();
-
+*/
 
 const Jewleries = new Schema({
 

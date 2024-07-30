@@ -1,8 +1,9 @@
-const Jewelry = require('../models/jewelries');
+const Jewelry = require('../models/jewelries'); //import
 
 async function getAllJewelries() 
 {
-  return await Jewelry.find({});
+  
+  return await Jewelry.find({}).exec();
 }
 
 const getJewelryByID = async (id) => 
