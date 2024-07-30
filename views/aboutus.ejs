@@ -26,7 +26,6 @@
             <input type="text" id="searchInput" placeholder="Search...">
         </div>
     </header>
-
     <nav>
         <ul>
             <li><a href="/" id="home-link">Home</a></li>
@@ -34,50 +33,27 @@
             <li class="dropdown">
                 <a href="#shop" id="shop">Shop</a>
                 <div id="options" class="dropdown-content hidden">
-                    <p><a href="jewelry.ejs" id="showNecklaces">Necklaces</a></p>
-                    <p><a href="jewelry.ejs" id="showRings">Rings</a></p>
-                    <p><a href="jewelry.ejs" id="showBracelets">Bracelets</a></p>
-                    <p><a href="jewelry.ejs" id="showEarrings">Earrings</a></p>
+                    <p><a href="jewelries.ejs" id="showNecklaces">Necklaces</a></p>
+                    <p><a href="jewelries.ejs" id="showRings">Rings</a></p>
+                    <p><a href="jewelries.ejs" id="showBracelets">Bracelets</a></p>
+                    <p><a href="jewelries.ejs" id="showEarrings">Earrings</a></p>
                 </div>
             </li>
             <li><a href="branches.ejs">Contact</a></li>
         </ul>
     </nav>
-
+    
 
     <main>
-        <!-- Payment Section -->
-        <section id="payment" class="payment-section">
-            <div class="payment-container">
-                <div class="left-column">
-                    <h2>Payment</h2>
-                    <form action="/payment" method="post">
-                        <div class="form-group">
-                            <label for="cardNumber">Credit Card Number</label>
-                            <input type="text" id="cardNumber" name="cardNumber" placeholder="Credit Card Number" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="expiryDate">Expiry Date</label>
-                            <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="cvv">CVV</label>
-                            <input type="text" id="cvv" name="cvv" placeholder="CVV" required>
-                        </div>
-                        <button type="submit">Submit Payment</button>
-                    </form>
-                </div>
-                <div class="right-column">
-                    <div class="order-summary">
-                        <h2>Order Summary</h2>
-                        <p>Subtotal: $0</p>
-                        <p>Express Delivery with Signature: $0</p>
-                        <p>Estimated Total: $0</p>
-                    </div>
-                </div>
-            </div>
+      
+        <section id="about">
+            <h2>About Us</h2>
+            <p>At NTLC Jewelry, we pride ourselves on offering high-quality, handcrafted jewelry. Our artisans are dedicated to creating unique designs that stand the test of time.</p>
         </section>
+
+       
     </main>
+
     <footer>
         <p>&copy; 2024 NTLC Jewelry. All rights reserved.</p>
     </footer>
@@ -88,7 +64,7 @@
         <p>Total: ₪<span id="cart-total">0</span></p>
         <a href="payment.ejs"><button id="checkout">Checkout</button></a>
     </div>
-    
-    <script src="/javascript/credit.js"></script>
+
+    <script src="/javascript/home.js"></script>
 </body>
 </html>
