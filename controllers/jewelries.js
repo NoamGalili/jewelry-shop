@@ -41,9 +41,10 @@ const searchJewelry = async (req, res)=> {
 
 module.exports = 
 {
-    searchJewelry,
-    addJewelry,
     getAlljewelries,
-    getJewelryByID, 
-    deleteJewelry
+    getJewelryByID,
+    deleteJewelry,
+    addJewelry,
+    searchJewelry
+    
 }

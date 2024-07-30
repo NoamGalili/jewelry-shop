@@ -1,9 +1,10 @@
 const usersService = require('../services/users')
 
 
-function getLogin(req, res)
+
+function getMyProfile (req, res)
 {
-    res.render('login.ejs')
+    res.render('myprofile.ejs')
 }
 
 function getRegister (req, res)
@@ -11,33 +12,12 @@ function getRegister (req, res)
     res.render('register.ejs')
 }
 
-function getPayment (req, res)
+function getLogin(req, res)
 {
-    res.render('payment.ejs')
-}
-
-function getCredit (req, res)
-{
-    res.render('credit.ejs')
+    res.render('login.ejs')
 }
 
 //---add stuff that dont belong to this stream here
-
-function getMyOrders (req, res)
-{
-    res.render('myorders.ejs')
-}
-
-function getMyProfile (req, res)
-{
-    res.render('myprofile.ejs')
-}
-
-function branches (req, res)
-{
-    res.render('branches.ejs')
-}
-
 
 function getforgetpassword (req, res)
 {
@@ -48,10 +28,8 @@ function getforgetpassword (req, res)
 
 module.exports = 
 {
-    getforgetpassword,
-    getLogin,
+    getMyProfile,
     getRegister,
-    getPayment,
-    getCredit,
-    getMyOrders
+    getLogin,
+    getforgetpassword
 }

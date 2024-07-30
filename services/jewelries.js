@@ -15,11 +15,6 @@ const deleteJewelry = async (id) =>
   return await Jewelry.findById(id);
 }
 
-const getJewelriesByType = async (type) => 
-    {
-      return await Jewelry.findByType(type);
-    }
-
 const createJewelry = async (jewelryData) => 
 {
   try 
@@ -53,6 +48,5 @@ module.exports = {
     getAllJewelries,
     getJewelryByID,
     deleteJewelry,
-    createJewelry,
-    getJewelriesByType
+    createJewelry
 }

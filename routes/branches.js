@@ -5,7 +5,6 @@ const branchesController = require('../controllers/branches')
 
 router.route("/addBranch.ejs").get(branchesController.addBranch)
 router.route("/deleteBranch.ejs").get(branchesController.deleteBranch)
-
-
+router.route("/branches.ejs").get(branchesController.branches)
 
 module.exports = router

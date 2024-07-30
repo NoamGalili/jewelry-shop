@@ -10,10 +10,14 @@ function deleteBranch(req, res)
     res.render('deleteBranch.ejs')
 }
 
-
+function branches (req, res)
+{
+    res.render('branches.ejs')
+}
 
 module.exports = 
 {
     addBranch,
-    deleteBranch
+    deleteBranch,
+    branches
 }
