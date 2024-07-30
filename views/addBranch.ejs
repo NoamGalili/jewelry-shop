@@ -33,28 +33,45 @@
             <li class="dropdown">
                 <a href="#shop" id="shop">Shop</a>
                 <div id="options" class="dropdown-content hidden">
-                    <p><a href="/shop/necklaces" id="showNecklaces">Necklaces</a></p>
-                    <p><a href="/shop/rings" id="showRings">Rings</a></p>
-                    <p><a href="/shop/bracelets" id="showBracelets">Bracelets</a></p>
-                    <p><a href="/shop/earrings" id="showEarrings">Earrings</a></p>
+                    <p><a href="jewelries.ejs" id="showNecklaces">Necklaces</a></p>
+                    <p><a href="jewelries.ejs" id="showRings">Rings</a></p>
+                    <p><a href="jewelries.ejs" id="showBracelets">Bracelets</a></p>
+                    <p><a href="jewelries.ejs" id="showEarrings">Earrings</a></p>
                 </div>
             </li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
     
-    <main>
-        <div id="productGrid-necklaces" class="product-grid">
-            <% jewelries.forEach(function(jewelry) { %>
-                <div class="product">
-                    <img src="<%= jewelry.JewelryPhoto %>" alt="<%= jewelry.JewelryName %>">
-                    <div class="product-title"><%= jewelry.JewelryName %></div>
-                    <div class="product-price">₪<%= jewelry.JewelryPrice %></div>
-                </div>
-            <% }) %>
-        </div>
-    </main>
 
+    <main>
+        <h1>Open New Branch</h1>
+        <form id="branchForm">
+            <label for="branchId">Branch ID:</label>
+            <input type="number" id="branchId" name="branchId" required><br>
+    
+            <label for="branchName">Branch Name:</label>
+            <input type="text" id="branchName" name="branchName" required><br>
+    
+            <label for="branchCoordinates">Branch Coordinates:</label>
+            <input type="text" id="branchCoordinates" name="branchCoordinates" required><br>
+    
+            <label for="branchAddress">Branch Address:</label>
+            <input type="text" id="branchAddress" name="branchAddress" required><br>
+    
+            <label for="branchOpeningHours">Branch Opening Hours:</label>
+            <input type="text" id="branchOpeningHours" name="branchOpeningHours" required><br>
+    
+            <label for="branchManager">Branch Manager:</label>
+            <input type="text" id="branchManager" name="branchManager" required><br>
+    
+            <label for="branchManagerPhoto">Branch Manager Photo URL:</label>
+            <input type="text" id="branchManagerPhoto" name="branchManagerPhoto" required><br>
+    
+            <button type="submit">Open Branch</button>
+        </form>
+      
+    </main>
 
     <footer>
         <p>&copy; 2024 NTLC Jewelry. All rights reserved.</p>
@@ -67,6 +84,6 @@
         <a href="payment.ejs"><button id="checkout">Checkout</button></a>
     </div>
 
-    <script src="/javascript/home.js"></script>
+    <script src="/javascript/addBranch.js"></script> 
 </body>
 </html>
