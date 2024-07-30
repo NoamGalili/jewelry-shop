@@ -3,8 +3,8 @@ const FB = require('fb');
 const app = express();
 
 FB.options({
-  appId: '410471542140090',       
-  appSecret: '2eede93485986516aa19eb221d4ec417',
+  appId: '123',       
+  appSecret: '456',
   version: 'v10.0'
 });
 
