@@ -121,5 +121,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 async function search(){
     const search= document.getElementById('searchInput').value
+    const res= await fetch ('http://localhost:80/api/search/${search}')
+    const results = await res.json()
+    console.log(results)
 
 }
+
+document.getElementById('searchInput').onkeyup= search
