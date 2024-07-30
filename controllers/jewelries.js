@@ -29,8 +29,16 @@ function deleteJewelry(req, res)
     res.redirect("/")
 }
 
+function addJewelry(req, res)
+{
+    res.render('addjewelry.ejs')
+}
+
+
 module.exports = 
 {
+    
+    addJewelry,
     getAlljewelries,
     getJewelryByID, 
     deleteJewelry
