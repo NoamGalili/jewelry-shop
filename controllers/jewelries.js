@@ -1,20 +1,21 @@
-const jewelriesModel = require('../models/jewelries')
+const jewelriesService = require('../services/jewelry')
 
 function getAlljewelries(req, res)
 {
-    const jewelries = jewelriesModel.getAllJewelries()
+    const jewelries = jewelriesService.getAllJewelries()
     res.render('home.ejs',{ jewelries })
 }
 
 
-function getJewelry(req, res)
+function getJewelryByID(req, res)
 {
     const jewelryId =  req.query.id
-    //if (!jewelry) return res.status(404).send('Jewelry not found');
-    const jewelry = jewelriesModel.getJewelry(jewelryId) //passing the idparameter to the function 
+
+    const jewelry = jewelriesService.getJewelryByID(jewelryId) //passing the id parameter to the function 
+
     if(jewelry == undefined)
     {
-        res.status(404).send("jewelry not found")
+        res.status(404).send("jewelry not found") //check how to create a custume 404 page...
     }
     else
     {
@@ -22,19 +23,16 @@ function getJewelry(req, res)
     }
 }
 
-
-function  deleteJewelry(req, res)
+function deleteJewelry(req, res)
 {
-    const jewelryId= req.query.id
-    jewelriesModel.deleteJewelry(jewelryId)
-    //getAlljewelries(req, res)
+    const jewelryId = req.query.id
+    jewelriesService.deleteJewelry(jewelryId)
     res.redirect("/")
 }
 
-// making the function public
 module.exports = 
 {
     getAlljewelries,
-    getJewelry, 
+    getJewelryByID, 
     deleteJewelry
 }

@@ -1,4 +1,4 @@
-const usersModel = require('../models/users')
+const usersService = require('../services/users')
 
 
 function getLogin(req, res)
