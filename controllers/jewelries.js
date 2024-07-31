@@ -50,10 +50,12 @@ function addJewelry(req, res) {
 
 const getJewelriesByType = async (req, res) => {
     try {
-        const jewelryType = req.query.type || 'All'; // Use the query parameter to determine the type
-        const jewelries = await Jewelry.find({ type: jewelryType }); // Fetch jewelries from the database
+        const category = req.query.category || 'All'; // Use the query parameter to determine the category
+        const query = category === 'All' ? {} : { JewelryType: category }; // Build query based on category
+        const jewelries = await Jewelry.find(query); // Fetch jewelries from the database
+
         res.render('jewelries.ejs', {
-            JewelryType: jewelryType,
+            JewelryType: category,
             jewelries: jewelries
         });
     } catch (error) {
@@ -91,24 +93,10 @@ const getAllNecklaces = async () => {
     }
 };
 
-const getJewelriesByCategory = async (req, res) => {
-    try {
-        const category = req.query.category || 'All'; // Use the query parameter to determine the category
-        const query = category === 'All' ? {} : { JewelryType: category }; // Build query based on category
-        const jewelries = await Jewelry.find(query); // Fetch jewelries from the database
-        res.render('jewelries.ejs', {
-            category: category,
-            jewelries: jewelries
-        });
-    } catch (error) {
-        console.error('Error fetching jewelries:', error);
-        res.status(500).send('Server Error');
-    }
-};
+
 
 module.exports = {
     getAlljewelries,
-    getJewelriesByCategory,
     getNewjewelries,
     getJewelryByID,
     deleteJewelry,
