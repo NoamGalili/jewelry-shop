@@ -44,7 +44,7 @@ async function deleteJewelry(req, res) {
     }
 }
 
-function addJewelry(req, res) {
+function getaddJewelrypj(req, res) {
     res.render('addjewelry.ejs');
 }
 
@@ -100,7 +100,7 @@ module.exports = {
     getNewjewelries,
     getJewelryByID,
     deleteJewelry,
-    addJewelry,
+    getaddJewelrypj,
     searchJewelry,
     getJewelriesByType,
     getAllNecklaces

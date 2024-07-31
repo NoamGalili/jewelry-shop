@@ -18,7 +18,7 @@ router.route("/deleteJewelry.ejs")
     .get(jewelriesController.deleteJewelry);
 
 router.route("/addjewelry.ejs")
-    .get(jewelriesController.addJewelry);
+    .get(jewelriesController.getaddJewelrypj);
 
 router.route("/jewelries.ejs")
     .get(jewelriesController.getAlljewelries);
