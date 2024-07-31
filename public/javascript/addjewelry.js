@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const jewelryPrice = document.getElementById('jewelryPrice').value;
         const jewelryDescription = document.getElementById('jewelryDescription').value;
         const jewelryAvaliableStock = document.getElementById('jewelryAvaliableStock').value;
-        const jewelryAmountOfOrders = document.getElementById('jewelryAmountOfOrders').value;
     });
 
     funct(jewelryForm)
