@@ -4,7 +4,9 @@ const express = require('express');
 const router = express.Router();
 const jewelriesController = require('../controllers/jewelries'); // bringing the jewelry functions
 
-router.get('/jewelries', jewelriesController.getJewelriesByType); // Use the controller function
+router.get('/jewelries.ejs', jewelriesController.getJewelriesByType); // Use the controller function
+router.get('/jewelries.ejs', jewelriesController.getJewelriesByCategory); // New route for category filter
+
 
 router.route("/")
     .get(jewelriesController.getNewjewelries); // Redirecting / to controller.
