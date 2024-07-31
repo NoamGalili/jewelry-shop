@@ -12,10 +12,6 @@ async function getAllJewelries() {
   }
 }
 
-module.exports = {
-  getAllJewelries
-};
-
 
 const getJewelryByID = async (id) => 
 {
