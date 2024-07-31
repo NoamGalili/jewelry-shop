@@ -1,6 +1,6 @@
 const jewelriesService = require('../services/jewelries');
 
-async function getAlljewelries(req, res) {
+async function getNewjewelries(req, res) {
     try {
         const jewelries = await jewelriesService.getAllJewelries();
         if (jewelries.length === 0) {
@@ -49,9 +49,15 @@ const searchJewelry = async (req, res)=>
     res.json(jewlery)
 }
 
+function getAlljewelries(req, res)
+{
+    res.render('jewelries.ejs')
+}
+
 module.exports = 
 {
     getAlljewelries,
+    getNewjewelries,
     getJewelryByID,
     deleteJewelry,
     addJewelry,
