@@ -1,5 +1,3 @@
-
-
 const jewelriesService = require('../services/jewelries');
 const Jewelry = require('../models/jewelries');
 
@@ -46,6 +44,12 @@ async function deleteJewelry(req, res) {
 
 function getAddJewelryPg(req, res) {
     res.render('addjewelry.ejs');
+}
+
+function addJewelry(document) 
+{
+    console.log(document)
+        
 }
 
 const getJewelriesByType = async (req, res) => {
@@ -103,5 +107,7 @@ module.exports = {
     getAddJewelryPg,
     searchJewelry,
     getJewelriesByType,
-    getAllNecklaces
+    getAllNecklaces,
+
+    addJewelry
 }
