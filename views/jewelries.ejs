@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <title>NTLC Jewelry - <%= category %></title>
+    <title>NTLC Jewelry - <%= JewelryType %></title>
     <link href="/styles/all.css" rel="stylesheet">
 </head>
 <body>
@@ -45,7 +45,7 @@
     </nav>
 
     <main>
-        <h2><%= category %></h2>
+        <h2><%= JewelryType %></h2>
         <div id="jewelries">
             <% if (jewelries && jewelries.length > 0) { %>
                 <% jewelries.forEach(jewelry => { %>
@@ -58,7 +58,7 @@
                     </div>
                 <% }) %>
             <% } else { %>
-                <p>No <%= category %> found.</p>
+                <p>No <%= JewelryType %> found.</p>
             <% } %>
         </div>
     </main>
