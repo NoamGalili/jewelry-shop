@@ -1,4 +1,5 @@
 const jewelriesService = require('../services/jewelries');
+const Jewelry = require('../models/jewelries');
 
 async function getNewjewelries(req, res) {
     try {
@@ -49,10 +50,25 @@ const searchJewelry = async (req, res)=>
     res.json(jewlery)
 }
 
-function getAlljewelries(req, res)
-{
-    res.render('jewelries.ejs')
-}
+const getAlljewelries = async (req, res) => {
+    try {
+        const jewelryType = req.query.type || 'All'; // Use the query parameter to determine the type
+        const jewelries = await Jewelry.find({ type: jewelryType }); // Fetch jewelries from the database
+
+        res.render('jewelries.ejs', {
+            JewelryType: jewelryType,
+            jewelries: jewelries
+        });
+    } catch (error) {
+        console.error('Error fetching jewelries:', error);
+        res.status(500).send('Server Error');
+    }
+};
+
+//function getAlljewelries(req, res)
+//{
+  //  res.render('jewelries.ejs')
+//}
 
 const getAllNecklaces = async () => {
     try {
