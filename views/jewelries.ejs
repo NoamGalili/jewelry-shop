@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <title>NTLC Jewelry</title>
+    <title>NTLC Jewelry - <%= category %></title>
     <link href="/styles/all.css" rel="stylesheet">
 </head>
 <body>
@@ -16,9 +16,9 @@
                 <span id="cart-count" class="cart-count">0</span>
             </div>
             <img class="head-icons" src="/images/search-icon.png" alt="Search Icon" id="searchIcon">
-            <a href="login.ejs"><img class="head-icons" src="/images/user-icon.png" alt="User Icon" id="userIcon"></a>
+            <a href="/login"><img class="head-icons" src="/images/user-icon.png" alt="User Icon" id="userIcon"></a>
             <div>
-                <a href="myprofile.ejs" class="profile-link">my profile</a>
+                <a href="/myprofile" class="profile-link">my profile</a>
             </div>
         </div>
         <div class="search-bar" id="searchBar">
@@ -26,35 +26,42 @@
             <input type="text" id="searchInput" placeholder="Search...">
         </div>
     </header>
+
     <nav>
         <ul>
             <li><a href="/" id="home-link">Home</a></li>
-            <li><a href="aboutus.ejs">About Us</a></li>
+            <li><a href="/aboutus">About Us</a></li>
             <li class="dropdown">
                 <a href="#shop" id="shop">Shop</a>
                 <div id="options" class="dropdown-content hidden">
-                    <p><a href="/shop/necklaces" id="showNecklaces">Necklaces</a></p>
-                    <p><a href="/shop/rings" id="showRings">Rings</a></p>
-                    <p><a href="/shop/bracelets" id="showBracelets">Bracelets</a></p>
-                    <p><a href="/shop/earrings" id="showEarrings">Earrings</a></p>
+                    <p><a href="/jewelries/Necklaces" id="showNecklaces">Necklaces</a></p>
+                    <p><a href="/jewelries/Rings" id="showRings">Rings</a></p>
+                    <p><a href="/jewelries/Bracelets" id="showBracelets">Bracelets</a></p>
+                    <p><a href="/jewelries/Earrings" id="showEarrings">Earrings</a></p>
                 </div>
             </li>
-            <li><a href="branches.ejs">Contact</a></li>
+            <li><a href="/branches">Contact</a></li>
         </ul>
     </nav>
-    
+
     <main>
-        <div id="productGrid-necklaces" class="product-grid">
-            <% jewelries.forEach(function(jewelry) { %>
-                <div class="product">
-                    <img src="<%= jewelry.JewelryPhoto %>" alt="<%= jewelry.JewelryName %>">
-                    <div class="product-title"><%= jewelry.JewelryName %></div>
-                    <div class="product-price">₪<%= jewelry.JewelryPrice %></div>
-                </div>
-            <% }) %>
+        <h2><%= category %></h2>
+        <div id="jewelries">
+            <% if (jewelries && jewelries.length > 0) { %>
+                <% jewelries.forEach(jewelry => { %>
+                    <div class="jewelry-item">
+                        <img src="<%= jewelry.JewelryPhoto %>" alt="<%= jewelry.JewelryName %>">
+                        <h3><%= jewelry.JewelryName %></h3>
+                        <p class="price">Price: $<%= jewelry.JewelryPrice %></p>
+                        <p>Description: <%= jewelry.JewelryDescription %></p>
+                        <button class="add-to-cart">Add to Bag</button>
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <p>No <%= category %> found.</p>
+            <% } %>
         </div>
     </main>
-
 
     <footer>
         <p>&copy; 2024 NTLC Jewelry. All rights reserved.</p>
@@ -64,7 +71,7 @@
         <h2>Shopping Cart</h2>
         <ul id="cart-items"></ul>
         <p>Total: ₪<span id="cart-total">0</span></p>
-        <a href="payment.ejs"><button id="checkout">Checkout</button></a>
+        <a href="/payment"><button id="checkout">Checkout</button></a>
     </div>
 
     <script src="/javascript/home.js"></script>

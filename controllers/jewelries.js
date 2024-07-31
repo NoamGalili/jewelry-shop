@@ -54,6 +54,15 @@ function getAlljewelries(req, res)
     res.render('jewelries.ejs')
 }
 
+const getAllNecklaces = async () => {
+    try {
+      return await Jewelry.find({ JewelryType: 'Necklaces' });
+    } catch (error) {
+      console.error('Error fetching necklaces:', error);
+      throw error;
+    }
+  };
+
 module.exports = 
 {
     getAlljewelries,
@@ -61,6 +70,7 @@ module.exports =
     getJewelryByID,
     deleteJewelry,
     addJewelry,
-    searchJewelry
+    searchJewelry,
+    getAllNecklaces
 
 }

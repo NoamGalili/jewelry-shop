@@ -55,10 +55,19 @@ const createJewelry = async (jewelryData) =>
     throw error;
   }
 }
+const getAllNecklaces = async () => {
+  try {
+    return await Jewelry.find({ JewelryType: "Necklaces" });
+  } catch (error) {
+    console.error('Error fetching necklaces:', error);
+    throw error;
+  }
+};
 
 module.exports = {
     getAllJewelries,
     getJewelryByID,
     deleteJewelry,
-    createJewelry
+    createJewelry,
+    getAllNecklaces
 }
