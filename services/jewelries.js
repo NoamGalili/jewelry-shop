@@ -1,5 +1,6 @@
-const Jewelry = require('../models/jewelries'); //import
 
+
+const Jewelry = require('../models/jewelries'); // Import
 
 async function getAllJewelries() {
   try {
@@ -12,23 +13,17 @@ async function getAllJewelries() {
   }
 }
 
-
-const getJewelryByID = async (id) => 
-{
+const getJewelryByID = async (id) => {
   return await Jewelry.findById(id);
 }
 
-const deleteJewelry = async (id) => 
-{
-  return await Jewelry.findById(id);
+const deleteJewelry = async (id) => {
+  return await Jewelry.findByIdAndDelete(id);
 }
 
-const createJewelry = async (jewelryData) => 
-{
-  try 
-  {
-    const newJewelry = new Jewelry(
-    {
+const createJewelry = async (jewelryData) => {
+  try {
+    const newJewelry = new Jewelry({
       JewelryID: jewelryData.JewelryID,
       JewelryType: jewelryData.JewelryType,
       JewelryColor: jewelryData.JewelryColor,
@@ -43,14 +38,12 @@ const createJewelry = async (jewelryData) =>
 
     await newJewelry.save();
     return newJewelry;
-  }
-  
-  catch (error) 
-  {
+  } catch (error) {
     console.error('Error creating jewelry:', error);
     throw error;
   }
 }
+
 const getAllNecklaces = async () => {
   try {
     return await Jewelry.find({ JewelryType: "Necklaces" });
@@ -61,9 +54,9 @@ const getAllNecklaces = async () => {
 };
 
 module.exports = {
-    getAllJewelries,
-    getJewelryByID,
-    deleteJewelry,
-    createJewelry,
-    getAllNecklaces
+  getAllJewelries,
+  getJewelryByID,
+  deleteJewelry,
+  createJewelry,
+  getAllNecklaces
 }
