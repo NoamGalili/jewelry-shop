@@ -56,9 +56,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelectorAll('.add-to-cart').forEach(button => {
         button.addEventListener('click', function() {
-            var product = this.closest('.product');
-            var title = product.querySelector('.product-title').innerText;
-            var price = product.querySelector('.product-price').innerText;
+            var jewelryItem = this.closest('.jewelry-item');
+            var title = jewelryItem.querySelector('h2').innerText;
+            var price = jewelryItem.querySelector('.price').innerText.replace('Price: $', '');
 
             addToCart(title, price);
             showCart();
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var total = 0;
 
         for (var i = 0; i < cartItems.length; i++) {
-            var price = cartItems[i].getElementsByTagName('span')[1].innerText.replace('₪', '');
+            var price = cartItems[i].getElementsByTagName('span')[1].innerText;
             total += parseFloat(price);
         }
 
@@ -120,11 +120,10 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 async function search(){
-    const search= document.getElementById('searchInput').value
-    const res= await fetch ('http://localhost:80/api/search/${search}')
-    const results = await res.json()
-    console.log(results)
-
+    const search = document.getElementById('searchInput').value;
+    const res = await fetch(`http://localhost:80/api/search/${search}`);
+    const results = await res.json();
+    console.log(results);
 }
 
-document.getElementById('searchInput').onkeyup= search
+document.getElementById('searchInput').onkeyup = search;

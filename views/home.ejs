@@ -52,24 +52,22 @@
                 <p>Your one-stop shop for exquisite jewelry pieces. Explore our collection and find the perfect piece to adorn yourself or your loved ones.</p>
             </div>
         </section>
-        <section id="jewelries">
-            <h2>Our Jewelries</h2>
-         
-            <div class="jewelry-list">
-                <% if (jewelries.length > 0) { %>
-                    <% jewelries.forEach(jewelry => { %>
-                        <div class="jewelry-item">
-                            <img src="<%= jewelry.JewelryPhoto %>" alt="<%= jewelry.JewelryName %>">
-                            <h3><%= jewelry.JewelryName %></h3>
-                            <p>₪<%= jewelry.JewelryPrice %></p>
-                            <p><%= jewelry.JewelryDescription %></p>
-                        </div>
-                    <% }) %>
-                <% } else { %>
-                    <p>No jewelries available at the moment.</p>
-                <% } %>
-            </div>
-        </section>
+        <h1>Newest Jewleries</h1>
+        <div id="jewleries">
+            <% if (jewelries.length > 0) { %>
+                <% jewelries.forEach(jewelry => { %>
+                    <div class="jewelry-item">
+                        <img src="<%= jewelry.JewelryPhoto %>" alt="<%= jewelry.JewelryName %>">
+                        <h2><%= jewelry.JewelryName %></h2>
+                        <p class="price">Price: $<%= jewelry.JewelryPrice %></p>
+                        <p>Description: <%= jewelry.JewelryDescription %></p>
+                        <button class="add-to-cart">Add to Bag</button>
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <p>No jewelry items found.</p>
+            <% } %>
+        </div>
         
     </main>
 
