@@ -3,12 +3,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
   },
-
   "dependencies": {
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "mongoose": "^8.5.1",
+    "mongose": "^0.0.2-security",
     "nodemon": "^3.1.4"
   }
 }
