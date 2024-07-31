@@ -3,6 +3,7 @@ const router = express.Router()
 const jewelriesController = require('../controllers/jewelries')// bringing the jewlery fuunctions
 const Jewelry = require('../models/jewelries'); // Adjust the path according to your project structure
 
+
 router.get('/jewelries', async (req, res) => {
     try {
         const jewelryType = req.query.type || 'All'; // You can pass the jewelry type as a query parameter or set a default value

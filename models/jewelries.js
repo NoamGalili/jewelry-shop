@@ -5,7 +5,7 @@ const connectDB = require('../db'); // Adjust the path as needed
 connectDB();
 */
 
-const Jewleries = new Schema({
+const Jewelries = new Schema({
 
       JewelryID:{ type: String, required: true, unique: true },
       JewelryType:{ type: String, required: true },
@@ -20,5 +20,5 @@ const Jewleries = new Schema({
       
 })
 
-module.exports = mongoose.model('Jewleries',Jewleries)
+module.exports = mongoose.model('jewelries',Jewelries)
 
