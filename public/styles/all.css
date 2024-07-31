@@ -219,26 +219,65 @@ section p {
     cursor: pointer;
 }
 
+/* Cart Styles */
 #cart {
     position: fixed;
     right: 20px;
-    top: 60px;
+    top: 80px;
     width: 300px;
-    background-color: #FBF9F1;
+    background-color: #fff;
     border: 1px solid #ddd;
-    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     display: none; /* Initially hidden */
+}
+
+#cart h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
 }
 
 #cart ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 #cart ul li {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+#cart ul li:last-child {
+    border-bottom: none;
+}
+
+#cart .remove-item {
+    background-color: #92C7CF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px; /* Smaller padding to reduce width */
+    font-size: 1em; /* Keeping font size unchanged */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: auto; /* Ensuring button width is determined by content */
+    min-width: 50px; /* Minimum width to avoid being too narrow */
+}
+
+#cart .remove-item:hover {
+    background-color: #92C7CF;
+}
+
+#cart p {
+    font-size: 1.2em;
+    margin: 20px 0;
+    text-align: right;
 }
 
 #checkout {
@@ -246,9 +285,17 @@ section p {
     background-color: #92C7CF;
     color: #fff;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    width: 100%;
+    font-size: 1.2em;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
+#checkout:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
 .cart-icon {
     position: fixed;
     right: 20px;
@@ -317,7 +364,7 @@ input[type="text"] {
 
 button {
     padding: 10px 15px;
-    background-color: #28a745;
+    background-color: #92C7CF;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -327,7 +374,7 @@ button {
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #92C7CF;
 }
 
 .order-summary {
