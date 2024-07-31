@@ -16,9 +16,9 @@
                 <span id="cart-count" class="cart-count">0</span>
             </div>
             <img class="head-icons" src="/images/search-icon.png" alt="Search Icon" id="searchIcon">
-            <a href="/login"><img class="head-icons" src="/images/user-icon.png" alt="User Icon" id="userIcon"></a>
+            <a href="login.ejs"><img class="head-icons" src="/images/user-icon.png" alt="User Icon" id="userIcon"></a>
             <div>
-                <a href="/myprofile" class="profile-link">my profile</a>
+                <a href="myprofile.ejs" class="profile-link">my profile</a>
             </div>
         </div>
         <div class="search-bar" id="searchBar">
@@ -30,7 +30,7 @@
     <nav>
         <ul>
             <li><a href="/" id="home-link">Home</a></li>
-            <li><a href="/aboutus">About Us</a></li>
+            <li><a href="aboutus.ejs">About Us</a></li>
             <li class="dropdown">
                 <a href="#shop" id="shop">Shop</a>
                 <div id="options" class="dropdown-content hidden">
@@ -40,27 +40,27 @@
                     <p><a href="jewelries.ejs?category=Earrings" id="showEarrings">Earrings</a></p>
                 </div>
             </li>
-            <li><a href="/branches">Contact</a></li>
+            <li><a href="branches.ejs">Contact</a></li>
         </ul>
     </nav>
 
     <main>
         <h2><%= JewelryType %></h2>
-        <div id="jewelries">
-            <% if (jewelries && jewelries.length > 0) { %>
-                <% jewelries.forEach(jewelry => { %>
-                    <div class="jewelry-item">
-                        <img src="<%= jewelry.JewelryPhoto %>" alt="<%= jewelry.JewelryName %>">
-                        <h3><%= jewelry.JewelryName %></h3>
-                        <p class="price">Price: $<%= jewelry.JewelryPrice %></p>
-                        <p>Description: <%= jewelry.JewelryDescription %></p>
-                        <button class="add-to-cart">Add to Bag</button>
-                    </div>
-                <% }) %>
-            <% } else { %>
-                <p>No <%= JewelryType %> found.</p>
-            <% } %>
-        </div>
+    <div id="jewelries1">
+        <% if (jewelries && jewelries.length > 0) { %>
+            <% jewelries.forEach(jewelry => { %>
+                <div class="jewelry-item1">
+                    <img src="<%= jewelry.JewelryPhoto %>" alt="<%= jewelry.JewelryName %>">
+                    <h3><%= jewelry.JewelryName %></h3>
+                    <p class="price">Price: ₪<%= jewelry.JewelryPrice %></p>
+                    <p>Description: <%= jewelry.JewelryDescription %></p>
+                    <button class="add-to-cart">Add to Bag</button>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p>No <%= JewelryType %> found.</p>
+        <% } %>
+    </div>
     </main>
 
     <footer>
@@ -71,9 +71,9 @@
         <h2>Shopping Cart</h2>
         <ul id="cart-items"></ul>
         <p>Total: ₪<span id="cart-total">0</span></p>
-        <a href="/payment"><button id="checkout">Checkout</button></a>
+        <a href="payment.ejs"><button id="checkout">Checkout</button></a>
     </div>
 
-    <script src="/javascript/home.js"></script>
+    <script src="/javascript/jewelries.js"></script>
 </body>
 </html>

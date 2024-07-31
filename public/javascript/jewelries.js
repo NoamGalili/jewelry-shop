@@ -56,8 +56,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelectorAll('.add-to-cart').forEach(button => {
         button.addEventListener('click', function() {
-            var jewelryItem = this.closest('.jewelry-item');
-            var title = jewelryItem.querySelector('h2').innerText;
+            var jewelryItem = this.closest('.jewelry-item1');
+            var title = jewelryItem.querySelector('h3').innerText;
             var price = jewelryItem.querySelector('.price').innerText.replace('Price: ₪', '');
 
             addToCart(title, price);
