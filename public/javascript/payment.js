@@ -118,19 +118,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
-//בדיקת פונקציות
-function getQueryParameter(name) {
-    let urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(name);
-}
-
-function loadTotalAmount() {
-    let totalAmount = getQueryParameter('totalAmount');
-    if (totalAmount) {
-        document.getElementById('subtotal').textContent = totalAmount;
-        document.getElementById('estimated-total').textContent = totalAmount;
-    }
-}
-
-// שליפת הסכום בהעלאת הדף
-loadTotalAmount();
