@@ -1,10 +1,21 @@
 const Jewelry = require('../models/jewelries'); //import
 
-async function getAllJewelries() 
-{
-  
-  return await Jewelry.find({}).exec();
+
+async function getAllJewelries() {
+  try {
+    const jewelries = await Jewelry.find({});
+    console.log('Service: Fetched jewelries from DB:', jewelries);
+    return jewelries;
+  } catch (error) {
+    console.error('Error fetching jewelries:', error);
+    throw error;
+  }
 }
+
+module.exports = {
+  getAllJewelries
+};
+
 
 const getJewelryByID = async (id) => 
 {

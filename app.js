@@ -6,7 +6,7 @@ const connectDB = require('./db'); // Adjust the path as needed
 connectDB();
 //import db from 'db.js';
 //db.connectDB();
-//const jewelriesController = require('./controllers/jewelries') 
+//const jewelriesController = require('./routes/jewelries') 
 
 const jewelries = require('./routes/jewelries') //if we want to add more routes files we need to import them the same as here...
 const users = require('./routes/users')
@@ -19,20 +19,15 @@ const jewelriesController= require('./controllers/jewelries')
 server.use(express.json());
 
 
-//server.use(jewelries)
-//server.use(users
-//server.use(orders)
-//server.use(branches)
-//server.use(api)
+server.use(jewelries)
+server.use(users)
+server.use(orders)
+server.use(branches)
+server.use(api)
+
+server.use(express.static('public'));
 
 
-server.use('/api', jewelries);
-
-server.get('/', (req, res) => {
-  
-    res.send('Welcome to my server!');
-    jewelriesController.getAlljewelries()
-  });
 
 //server.listen(80) //listning on port 80
 server.listen(port, () => {

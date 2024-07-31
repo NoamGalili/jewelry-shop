@@ -1,11 +1,18 @@
-const jewelriesService = require('../services/jewelries')
+const jewelriesService = require('../services/jewelries');
 
-function getAlljewelries(req, res)
-{
-    
-    const jewelries = jewelriesService.getAllJewelries()
-   // res.render('home.ejs',{ jewelries })
-    res.json(jewelries);
+async function getAlljewelries(req, res) {
+    try {
+        const jewelries = await jewelriesService.getAllJewelries();
+        if (jewelries.length === 0) {
+            console.log("No jewelries found in the database.");
+        } else {
+            console.log("Fetched jewelries: ", jewelries);
+        }
+        res.render('home.ejs', { jewelries });
+    } catch (error) {
+        console.error('Error fetching jewelries:', error);
+        res.status(500).send('Internal Server Error');
+    }
 }
 
 function getJewelryByID(req, res)

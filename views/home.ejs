@@ -41,6 +41,7 @@
             </li>
             <li><a href="branches.ejs">Contact</a></li>
         </ul>
+
     </nav>
     
 
@@ -51,20 +52,24 @@
                 <p>Your one-stop shop for exquisite jewelry pieces. Explore our collection and find the perfect piece to adorn yourself or your loved ones.</p>
             </div>
         </section>
-
-        <h1>Jewelry Collection</h1>
-        <ul>
-          <% jewelries.forEach(jewelry => { %>
-            <li>
-              <h2><%= jewelry.JewelryName %></h2>
-              <p>Type: <%= jewelry.JewelryType %></p>
-              <p>Color: <%= jewelry.JewelryColor %></p>
-              <p>Price: <%= jewelry.JewelryPrice %></p>
-              <p>Description: <%= jewelry.JewelryDescription %></p>
-              <img src="<%= jewelry.JewelryPhoto %>" alt="<%= jewelry.JewelryName %>">
-            </li>
-          <% }) %>
-        </ul>
+        <section id="jewelries">
+            <h2>Our Jewelries</h2>
+         
+            <div class="jewelry-list">
+                <% if (jewelries.length > 0) { %>
+                    <% jewelries.forEach(jewelry => { %>
+                        <div class="jewelry-item">
+                            <img src="<%= jewelry.JewelryPhoto %>" alt="<%= jewelry.JewelryName %>">
+                            <h3><%= jewelry.JewelryName %></h3>
+                            <p>₪<%= jewelry.JewelryPrice %></p>
+                            <p><%= jewelry.JewelryDescription %></p>
+                        </div>
+                    <% }) %>
+                <% } else { %>
+                    <p>No jewelries available at the moment.</p>
+                <% } %>
+            </div>
+        </section>
         
     </main>
 
