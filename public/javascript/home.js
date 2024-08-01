@@ -127,3 +127,55 @@ async function search(){
 }
 
 document.getElementById('searchInput').onkeyup = search;
+
+
+// API- המרת מטבע 
+const currencyPairs = [
+    { base: 'USD', target: 'EUR' },
+    { base: 'GBP', target: 'JPY' },
+    { base: 'ILS', target: 'USD' }
+];
+
+const exchangeRatesData = [];
+
+// Function to handle fetched data
+function handleFetchedData(data) {
+    console.log('Fetched exchange rate data:', data);
+    data.forEach(rateData => {
+        console.log(`1 ${rateData.base} = ${rateData.rate} ${rateData.target}`);
+    });
+}
+
+// Function to fetch exchange rates
+function fetchExchangeRates(pairs, callback) {
+    const fetchPromises = pairs.map(pair => {
+        return fetch(`https://api.frankfurter.app/latest?from=${pair.base}&to=${pair.target}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch data for ${pair.base} to ${pair.target}: ${response.statusText}`);
+                }
+                return response.json();
+            })
+            .then(data => ({
+                base: pair.base,
+                target: pair.target,
+                rate: data.rates[pair.target]
+            }))
+            .catch(error => {
+                console.error('Error:', error);
+                return null; // Return null for failed requests
+            });
+    });
+
+    // Wait for all fetch requests to complete
+    Promise.all(fetchPromises).then(results => {
+        const successfulResults = results.filter(result => result !== null);
+        exchangeRatesData.push(...successfulResults);
+
+        // Call the callback function with the fetched data
+        callback(successfulResults);
+    });
+}
+
+// Call the function to fetch exchange rates
+fetchExchangeRates(currencyPairs, handleFetchedData);
