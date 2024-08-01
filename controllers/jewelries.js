@@ -68,11 +68,11 @@ async function addJewelry(req, res) {
 const getJewelriesByType = async (req, res) => {
     try {
         const category = req.query.category || 'All'; // Use the query parameter to determine the category
-        const query = category === 'All' ? {} : { JewelryType: category }; // Build query based on category
+        const query = category === 'All' ? {} : { jewelryType: category }; // Build query based on category
         const jewelries = await Jewelry.find(query); // Fetch jewelries from the database
 
         res.render('jewelries.ejs', {
-            JewelryType: category,
+            jewelryType: category,
             jewelries: jewelries
         });
     } catch (error) {

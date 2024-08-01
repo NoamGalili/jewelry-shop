@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <title>NTLC Jewelry - <%= JewelryType %></title>
+    <title>NTLC Jewelry - <%= jewelryType %></title>
     <link href="/styles/all.css" rel="stylesheet">
 </head>
 <body>
@@ -45,15 +45,15 @@
     </nav>
 
     <main>
-        <h2><%= JewelryType %></h2>
+        <h2><%= jewelryType %></h2>
     <div id="jewelries1">
         <% if (jewelries && jewelries.length > 0) { %>
             <% jewelries.forEach(jewelry => { %>
                 <div class="jewelry-item1">
-                    <img src="<%= jewelry.JewelryPhoto %>" alt="<%= jewelry.JewelryName %>">
+                    <img src="<%= jewelry.jewelryPhoto %>" alt="<%= jewelry.jewelryName %>">
                     <h3><%= jewelry.JewelryName %></h3>
-                    <p class="price">Price: ₪<%= jewelry.JewelryPrice %></p>
-                    <p>Description: <%= jewelry.JewelryDescription %></p>
+                    <p class="price">Price: ₪<%= jewelry.jewelryPrice %></p>
+                    <p>Description: <%= jewelry.jewelryDescription %></p>
                     <button class="add-to-cart">Add to Bag</button>
                 </div>
             <% }) %>
