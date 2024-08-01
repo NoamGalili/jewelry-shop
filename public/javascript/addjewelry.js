@@ -25,12 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
             jewelryAvaliableStock,
         }));
 
-        // xhr.onload = function () {
-        //     if (xhr.status === 200) {
-        //         alert('Form submitted successfully.');
-        //     } else {
-        //         alert('Form submission failed.');
-        //     }
-        // };
+        
     });
 });

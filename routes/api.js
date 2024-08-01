@@ -7,7 +7,7 @@ router.route('/search/: type').get(jewelriesController.getAlljewelries)
 
 router.route('/addJewelry').post(jewelriesController.addJewelry)
 
-
+router.route('/deleteJewelry').delete(jewelriesController.deleteJewelry)
 
 
 module.exports = router;

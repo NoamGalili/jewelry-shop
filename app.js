@@ -1,9 +1,9 @@
 const express = require('express')
-const session = require('express-session'); // ייבוא express-session
-const server = express () //building the server
+const session = require('express-session');
+const server = express () 
 const port = 80;
 
-const connectDB = require('./db'); // Adjust the path as needed
+const connectDB = require('./db');
 connectDB();
 
 
@@ -13,8 +13,6 @@ const orders = require('./routes/orders')
 const branches = require('./routes/branches')
 const cart = require('./routes/cart')
 const api = require('./routes/api')
-
-//const jewelriesController= require('./controllers/jewelries')
 
 server.use(express.json());
 

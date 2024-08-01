@@ -31,14 +31,22 @@ async function getJewelryByID(req, res) {
     }
 }
 
+
+function getdeleteJewelryPg(req, res) {
+    res.render('deletejewelry.ejs');
+}
+
+
 async function deleteJewelry(req, res) {
-    const jewelryId = req.query.id;
     try {
-        await jewelriesService.deleteJewelry(jewelryId);
-        res.redirect("/");
+        const { jewelryID } = req.body;
+        await Jewelry.findByIdAndDelete(jewelryID);
+        console.log(jewelryID);
+        return res.status(200).send('Jewelry removed successfully.');
+        
     } catch (error) {
-        console.error('Error deleting jewelry:', error);
-        res.status(500).send('Server Error');
+        console.error('failed to remove jewelry:', error);
+        return res.status(500).send('Failed to remove jewelry.');
     }
 }
 
@@ -52,7 +60,7 @@ async function addJewelry(req, res) {
         const newjewlry = await Jewelry.create({ ...data });
         return res.status(200).send('Jewelry added successfully.');
     } catch (error) {
-        console.error('Error fetching necklaces:', error);
+        console.error('failed to add jewelry:', error);
         throw error;
     }
 }
@@ -113,6 +121,6 @@ module.exports = {
     searchJewelry,
     getJewelriesByType,
     getAllNecklaces,
-
+    getdeleteJewelryPg,
     addJewelry
 }
