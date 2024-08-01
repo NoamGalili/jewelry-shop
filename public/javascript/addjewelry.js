@@ -2,9 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const jewelryForm = document.getElementById('jewelryForm');
 
     jewelryForm.addEventListener('submit', (event) => {
-        event.preventDefault(); // מונע את שליחת הטופס בצורה רגילה
-
-        // שומר את כל הנתונים שהמשתמש הכניס לתוך משתנים
+        event.preventDefault(); 
+        
         const jewelryID = document.getElementById('jewelryID').value;
         const jewelryType = document.getElementById('jewelryType').value;
         const jewelryColor = document.getElementById('jewelryColor').value;
