@@ -33,47 +33,27 @@
             <li class="dropdown">
                 <a href="#shop" id="shop">Shop</a>
                 <div id="options" class="dropdown-content hidden">
-                    <p><a href="jewelries.ejs?category=necklaces" id="showNecklaces">Necklaces</a></p>
-                    <p><a href="jewelries.ejs?category=rings"  id="showRings">Rings</a></p>
-                    <p><a href="jewelries.ejs?category=bracelets" id="showBracelets">Bracelets</a></p>
-                    <p><a href="jewelries.ejs?category=earrings" id="showEarrings">Earrings</a></p>
+                    <p><a href="jewelries.ejs?category=Necklaces" id="showNecklaces">Necklaces</a></p>
+                    <p><a href="jewelries.ejs?category=Rings"  id="showRings">Rings</a></p>
+                    <p><a href="jewelries.ejs?category=Bracelets" id="showBracelets">Bracelets</a></p>
+                    <p><a href="jewelries.ejs?category=Earrings" id="showEarrings">Earrings</a></p>
                 </div>
             </li>
             <li><a href="branches.ejs">Contact</a></li>
         </ul>
+
     </nav>
     
+
     <main>
-
-        <section id="about">
-            <h2>About Us</h2>
-            <p>At NTLC Jewelry, we pride ourselves on offering high-quality, handcrafted jewelry. Our artisans are dedicated to creating unique designs that stand the test of time.</p>
-        </section>
-
-        <section id="featured">
-            <h2>Your Managers</h2>
-            <div class="gallery">
-                    <div class="gallery-item">
-                        <img src="/images/BranchManagerPhoto/Noam.jpg" alt="Manager4">
-                        <p class="Manager-name">Noam Galili</p>
-                    </div>
-                    <div  class="gallery-item">
-                    <img src="/images/BranchManagerPhoto/tal.jpg" alt="Manager1">
-                    <p class="Manager-name">Tal Sadan</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="/images/BranchManagerPhoto/Lauren.png" alt="Manager3">
-                    <p class="Manager-name">Lauran Malka</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="/images/BranchManagerPhoto/Chen.png" alt="Manager2">
-                    <p class="Manager-name">Chen Kaduri</p>
-                </div>
-                
-            </div>
-        </section>
+        <h1>Delete Jewelry</h1>
         
+        <form id="jewelryForm" action="http://127.0.0.1:80/addJewelry" method="post">
+            <label for="jewelryID">Jewelry ID:</label>
+            <input type="text" id="jewelryID" name="jewelryID" required><br>
 
+            <input type="submit" value="Submit">
+        </form>
     </main>
 
     <footer>

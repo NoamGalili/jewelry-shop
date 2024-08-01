@@ -1,4 +1,3 @@
-
 function saveCart(req, res) {
     req.session.cart = req.body; // שמירת נתוני העגלה ב-session
     res.json({ success: true });

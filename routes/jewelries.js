@@ -14,13 +14,20 @@ router.route("/")
 router.route("/jewelry.ejs")
     .get(jewelriesController.getJewelryByID);
 
+    /*
 router.route("/deleteJewelry.ejs")
     .get(jewelriesController.deleteJewelry);
-
+*/
 router.route("/addjewelry.ejs")
     .get(jewelriesController.getAddJewelryPg);
 
+router.route("/deletejewelry.ejs")
+    .get(jewelriesController.getDeleteJewelry);
+
 router.route("/jewelries.ejs")
     .get(jewelriesController.getAlljewelries);
+
+ router.route("/404.ejs")
+    .get(jewelriesController.getJewelryByID);
 
 module.exports = router;
