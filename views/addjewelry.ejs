@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
     <title>NTLC Jewelry</title>
     <link href="/styles/all.css" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <h1>NTLC</h1>
@@ -34,7 +38,7 @@
                 <a href="#shop" id="shop">Shop</a>
                 <div id="options" class="dropdown-content hidden">
                     <p><a href="jewelries.ejs?category=necklaces" id="showNecklaces">Necklaces</a></p>
-                    <p><a href="jewelries.ejs?category=rings"  id="showRings">Rings</a></p>
+                    <p><a href="jewelries.ejs?category=rings" id="showRings">Rings</a></p>
                     <p><a href="jewelries.ejs?category=bracelets" id="showBracelets">Bracelets</a></p>
                     <p><a href="jewelries.ejs?category=earrings" id="showEarrings">Earrings</a></p>
                 </div>
@@ -42,56 +46,57 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-    
+
 
     <main>
-    
+
         <h1>Add New Jewelry</h1>
-        
-    <form id="jewelryForm" action="http://127.0.0.1:80/addJewelry" method="post">
-        <label for="jewelryID">Jewelry ID:</label>
-        <input type="text" id="jewelryID" name="jewelryID" required><br>
 
-        <label for="jewelryType">Jewelry Type:</label>
-        <input type="text" id="jewelryType" name="jewelryType" required><br>
+        <form id="jewelryForm" action="http://127.0.0.1:80/addJewelry" method="post">
+            <label for="jewelryID">Jewelry ID:</label>
+            <input type="text" id="jewelryID" name="jewelryID" required><br>
 
-        <label for="jewelryColor">Jewelry Color:</label>
-        <input type="text" id="jewelryColor" name="jewelryColor" required><br>
+            <label for="jewelryType">Jewelry Type:</label>
+            <input type="text" id="jewelryType" name="jewelryType" required><br>
 
-        <label for="jewelryName">Jewelry Name:</label>
-        <input type="text" id="jewelryName" name="jewelryName" required><br>
+            <label for="jewelryColor">Jewelry Color:</label>
+            <input type="text" id="jewelryColor" name="jewelryColor" required><br>
 
-        <label for="jewelryPhoto">Jewelry Photo URL:</label>
-        <input type="text" id="jewelryPhoto" name="jewelryPhoto" required><br>
+            <label for="jewelryName">Jewelry Name:</label>
+            <input type="text" id="jewelryName" name="jewelryName" required><br>
 
-        <label for="jewelryPrice">Jewelry Price:</label>
-        <input type="number" id="jewelryPrice" name="jewelryPrice" required><br>
+            <label for="jewelryPhoto">Jewelry Photo URL:</label>
+            <input type="text" id="jewelryPhoto" name="jewelryPhoto" required><br>
 
-        <label for="jewelryDescription">Jewelry Description:</label>
-        <textarea id="jewelryDescription" name="jewelryDescription" required></textarea><br>
+            <label for="jewelryPrice">Jewelry Price:</label>
+            <input type="number" id="jewelryPrice" name="jewelryPrice" required><br>
 
-        <label for="jewelryAvaliableStock">Jewelry Available Stock:</label>
-        <input type="number" id="jewelryAvaliableStock" name="jewelryAvaliableStock" required><br>
-        <input type="submit" value="Submit">
-    </form>
+            <label for="jewelryDescription">Jewelry Description:</label>
+            <textarea id="jewelryDescription" name="jewelryDescription" required></textarea><br>
 
-    <script>
-        document.getElementById('jewelryForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const form = event.target;
-            const formData = new FormData(form);
-            const xhr = new XMLHttpRequest();
-            xhr.open(form.method, form.action, true);
-            xhr.onload = function () {
-                if (xhr.status === 200) {
-                    alert('Form submitted successfully.');
-                } else {
-                    alert('Form submission failed.');
-                }
-            };
-            xhr.send(formData);
-        });
-    </script>
+            <label for="jewelryAvaliableStock">Jewelry Available Stock:</label>
+            <input type="number" id="jewelryAvaliableStock" name="jewelryAvaliableStock" required><br>
+            <input type="submit" value="Submit">
+        </form>
+
+        <script src="/javascript/addjewelry.js"></script>
+        <!-- <script>
+            document.getElementById('jewelryForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+                const form = event.target;
+                // const formData = new FormData(form);
+                // const xhr = new XMLHttpRequest();
+                // xhr.open(form.method, form.action, true);
+                // xhr.onload = function () {
+                //     if (xhr.status === 200) {
+                //         alert('Form submitted successfully.');
+                //     } else {
+                //         alert('Form submission failed.');
+                //     }
+                // };
+                // xhr.send(formData);
+            });
+        </script> -->
 
     </main>
 
@@ -107,4 +112,5 @@
     </div>
 
 </body>
+
 </html>

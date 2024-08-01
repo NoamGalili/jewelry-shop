@@ -7,18 +7,19 @@ connectDB();
 
 const Jewelries = new Schema({
 
-      JewelryID:{ type: String, required: true, unique: true },
-      JewelryType:{ type: String, required: true },
-      JewelryColor:{ type: String, required: true },
-      JewelryName:{ type: String, required: true },
-      JewelryPhoto:{ type: String, required: true },
-      JewelryPrice:{ type: Number, required: true },
-      JewelryDescription:{ type: String, required: true },
-      JewelryAddDate:{ type: Date, required: true, default: Date.now },
-      JewelryAvaliableStock:{ type: Number, required: true },
-      JewelryAmountOfOrders:{ type: Number, required: true, default: 0 },
-      
+      // _id : ObjectId,
+      // jewelryID: { type: String, required: true, unique: true },
+      jewelryType: { type: String, required: true },
+      jewelryColor: { type: String, required: true },
+      jewelryName: { type: String, required: true },
+      jewelryPhoto: { type: String, required: true },
+      jewelryPrice: { type: String, required: true },
+      jewelryDescription: { type: String, required: true },
+      jewelryAddDate: { type: Date, required: true, default: Date.now },
+      jewelryAvaliableStock: { type: String, required: true },
+      jewelryAmountOfOrders: { type: String, required: true, default: 0 },
+
 })
 
-module.exports = mongoose.model('jewelries',Jewelries)
+module.exports = mongoose.model('jewelries', Jewelries)
 

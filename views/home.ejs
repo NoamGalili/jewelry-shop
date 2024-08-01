@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
     <title>NTLC Jewelry</title>
     <link href="/styles/all.css" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <h1>NTLC</h1>
@@ -34,7 +38,7 @@
                 <a href="#shop" id="shop">Shop</a>
                 <div id="options" class="dropdown-content hidden">
                     <p><a href="jewelries.ejs?category=Necklaces" id="showNecklaces">Necklaces</a></p>
-                    <p><a href="jewelries.ejs?category=Rings"  id="showRings">Rings</a></p>
+                    <p><a href="jewelries.ejs?category=Rings" id="showRings">Rings</a></p>
                     <p><a href="jewelries.ejs?category=Bracelets" id="showBracelets">Bracelets</a></p>
                     <p><a href="jewelries.ejs?category=Earrings" id="showEarrings">Earrings</a></p>
                 </div>
@@ -43,31 +47,37 @@
         </ul>
 
     </nav>
-    
+
 
     <main>
         <section id="home" class="hero">
             <div class="hero-content">
                 <h2>Welcome to NTLC Jewelry</h2>
-                <p>Your one-stop shop for exquisite jewelry pieces. Explore our collection and find the perfect piece to adorn yourself or your loved ones.</p>
+                <p>Your one-stop shop for exquisite jewelry pieces. Explore our collection and find the perfect piece to
+                    adorn yourself or your loved ones.</p>
             </div>
         </section>
         <h1>ALL Jewleries</h1>
         <div id="jewleries">
-            <% if (jewelries.length > 0) { %>
-                <% jewelries.forEach(jewelry => { %>
-                    <div class="jewelry-item">
-                        <img src="<%= jewelry.JewelryPhoto %>" alt="<%= jewelry.JewelryName %>">
-                        <h2><%= jewelry.JewelryName %></h2>
-                        <p class="price">Price: ₪<%= jewelry.JewelryPrice %></p>
-                        <p>Description: <%= jewelry.JewelryDescription %></p>
+            <% if (jewelries.length> 0) { %>
+                <% jewelries.forEach(jewelry=> { %>
+                    <div class="jewelry-item" data-item-id="<%= jewelry._id %>">
+                        <img src="<%= jewelry.jewelryPhoto %>" alt="<%= jewelry.jewelryName %>">
+                        <h2>
+                            <%= jewelry.jewelryName %>
+                        </h2>
+                        <p class="price">Price: ₪<%= jewelry.jewelryPrice %>
+                        </p>
+                        <p>Description: <%= jewelry.jewelryDescription %>
+                        </p>
                         <button class="add-to-cart">Add to Bag</button>
                     </div>
-                <% }) %>
-            <% } else { %>
-                <p>No jewelry items found.</p>
-            <% } %>
+                    <% }) %>
+                        <% } else { %>
+                            <p>No jewelry items found.</p>
+                            <% } %>
         </div>
+
     </main>
 
     <footer>
@@ -83,4 +93,5 @@
 
     <script src="/javascript/home.js"></script>
 </body>
+
 </html>

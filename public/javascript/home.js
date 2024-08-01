@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     var searchBar = document.getElementById('searchBar');
     var cart = document.getElementById('cart');
     var searchIcon = document.getElementById('searchIcon');
@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     searchBar.classList.add('hidden');  // Hide the search bar initially
 
-    searchIcon.addEventListener('click', function(event) {
+    searchIcon.addEventListener('click', function (event) {
         event.stopPropagation();
         searchBar.classList.toggle('hidden');
         cart.style.display = 'none';  // Hide the cart if it was open
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    cartButton.addEventListener('click', function(event) {
+    cartButton.addEventListener('click', function (event) {
         event.stopPropagation();
         searchBar.classList.add('hidden');  // Hide the search bar if it was open
         toggleCartVisibility();
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    document.getElementById('shop').addEventListener('click', function(event) {
+    document.getElementById('shop').addEventListener('click', function (event) {
         event.preventDefault(); // Prevents the link from navigating
         var options = document.getElementById('options');
         if (options.classList.contains('hidden')) {
@@ -55,17 +55,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.querySelectorAll('.add-to-cart').forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             var jewelryItem = this.closest('.jewelry-item');
+            var itemId = jewelryItem.dataset.itemId;
             var title = jewelryItem.querySelector('h2').innerText;
             var price = jewelryItem.querySelector('.price').innerText.replace('Price: ₪', '');
 
-            addToCart(title, price);
+            addToCart(itemId, title, price);
             showCart();
         });
     });
 
-    function addToCart(title, price) {
+    function addToCart(itemId, title, price) {
         var cartItems = document.getElementById('cart-items');
         var cartTotal = document.getElementById('cart-total');
         var cartCount = document.getElementById('cart-count');
@@ -75,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
         li.innerHTML = `<span>${title}</span><span>${price}</span><button class="remove-item">Remove</button>`;
 
         // Add remove functionality to the new item
-        li.querySelector('.remove-item').addEventListener('click', function() {
+        li.querySelector('.remove-item').addEventListener('click', function () {
             li.remove();
             updateTotal();
             updateCartCount();
@@ -84,6 +85,10 @@ document.addEventListener('DOMContentLoaded', function() {
         cartItems.appendChild(li);
         updateTotal();
         updateCartCount();
+        // local storage is use to save the cart in the browser storage and not server-side
+        // localStorage.setItem('cart', "<ids>");
+        // save the cart in server-side
+        // updateCartInServer(<ids>);
     }
 
     function updateTotal() {
@@ -119,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-async function search(){
+async function search() {
     const search = document.getElementById('searchInput').value;
     const res = await fetch(`http://localhost:80/api/search/${search}`);
     const results = await res.json();
@@ -127,55 +132,3 @@ async function search(){
 }
 
 document.getElementById('searchInput').onkeyup = search;
-
-
-// API- המרת מטבע 
-const currencyPairs = [
-    { base: 'USD', target: 'EUR' },
-    { base: 'GBP', target: 'JPY' },
-    { base: 'ILS', target: 'USD' }
-];
-
-const exchangeRatesData = [];
-
-// Function to handle fetched data
-function handleFetchedData(data) {
-    console.log('Fetched exchange rate data:', data);
-    data.forEach(rateData => {
-        console.log(`1 ${rateData.base} = ${rateData.rate} ${rateData.target}`);
-    });
-}
-
-// Function to fetch exchange rates
-function fetchExchangeRates(pairs, callback) {
-    const fetchPromises = pairs.map(pair => {
-        return fetch(`https://api.frankfurter.app/latest?from=${pair.base}&to=${pair.target}`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`Failed to fetch data for ${pair.base} to ${pair.target}: ${response.statusText}`);
-                }
-                return response.json();
-            })
-            .then(data => ({
-                base: pair.base,
-                target: pair.target,
-                rate: data.rates[pair.target]
-            }))
-            .catch(error => {
-                console.error('Error:', error);
-                return null; // Return null for failed requests
-            });
-    });
-
-    // Wait for all fetch requests to complete
-    Promise.all(fetchPromises).then(results => {
-        const successfulResults = results.filter(result => result !== null);
-        exchangeRatesData.push(...successfulResults);
-
-        // Call the callback function with the fetched data
-        callback(successfulResults);
-    });
-}
-
-// Call the function to fetch exchange rates
-fetchExchangeRates(currencyPairs, handleFetchedData);

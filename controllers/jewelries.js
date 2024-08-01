@@ -46,14 +46,15 @@ function getAddJewelryPg(req, res) {
     res.render('addjewelry.ejs');
 }
 
-
-function getDeleteJewelry(req, res) {
-    res.render('deletejewelry.ejs');
-}
-
-function addJewelry(req,res) 
-{
-    console.log(req.id)   
+async function addJewelry(req, res) {
+    try {
+        const data = { ...req.body };
+        const newjewlry = await Jewelry.create({ ...data });
+        return res.status(200).send('Jewelry added successfully.');
+    } catch (error) {
+        console.error('Error fetching necklaces:', error);
+        throw error;
+    }
 }
 
 const getJewelriesByType = async (req, res) => {
@@ -112,6 +113,6 @@ module.exports = {
     searchJewelry,
     getJewelriesByType,
     getAllNecklaces,
-    getDeleteJewelry,
+
     addJewelry
 }
