@@ -128,7 +128,6 @@ async function search(){
 
 document.getElementById('searchInput').onkeyup = search;
 
-<<<<<<< HEAD
 
 // API- המרת מטבע 
 const currencyPairs = [
@@ -180,5 +179,3 @@ function fetchExchangeRates(pairs, callback) {
 
 // Call the function to fetch exchange rates
 fetchExchangeRates(currencyPairs, handleFetchedData);
-=======
->>>>>>> ef16001e8e645a96cb325aae9d8fee0af64a22b9
