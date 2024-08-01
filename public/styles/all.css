@@ -717,6 +717,7 @@ button:hover {
     height: auto;
     border-radius: 10px;
     margin-bottom: 15px;
+
 }
 
 .jewelry-item h2 {
@@ -724,6 +725,7 @@ button:hover {
     color: #333;
     font-size: 1.5em;
     margin: 10px 0;
+    
 }
 
 .jewelry-item p {
@@ -829,7 +831,7 @@ section#featured {
     font-size: 1.1rem;
 }
 .Manager-name::first-letter {
-    color: red; /* צבע האות הראשונה */
+    color: #92C7CF; /* צבע האות הראשונה */
     font-size: 2em; /* גודל האות הראשונה */
     font-weight: bold; /* הופך את האות הראשונה למודגשת */
 }
