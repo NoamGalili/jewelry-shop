@@ -303,7 +303,7 @@ section p {
     cursor: pointer;
 }
 
-img{
+.cart-items img{
     height: 50px;
     width: 50px;
 }
@@ -848,13 +848,16 @@ section#featured {
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
+    
+
 }
 
 .gallery-item img {
     max-width: 100%;
     border-radius: 10px;
     height: 200px;
-    object-fit: cover;
+   
+ 
 }
 
 .gallery-item:hover {
