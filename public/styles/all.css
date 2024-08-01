@@ -303,6 +303,11 @@ section p {
     cursor: pointer;
 }
 
+img{
+    height: 50px;
+    width: 50px;
+}
+
 .btn {
     background-color: #92C7CF;
     color: white;

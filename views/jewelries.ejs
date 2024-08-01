@@ -46,21 +46,21 @@
 
     <main>
         <h2><%= jewelryType %></h2>
-    <div id="jewelries1">
-        <% if (jewelries && jewelries.length > 0) { %>
-            <% jewelries.forEach(jewelry => { %>
-                <div class="jewelry-item1">
-                    <img src="<%= jewelry.jewelryPhoto %>" alt="<%= jewelry.jewelryName %>">
-                    <h3><%= jewelry.JewelryName %></h3>
-                    <p class="price">Price: ₪<%= jewelry.jewelryPrice %></p>
-                    <p>Description: <%= jewelry.jewelryDescription %></p>
-                    <button class="add-to-cart">Add to Bag</button>
-                </div>
-            <% }) %>
-        <% } else { %>
-            <p>No <%= JewelryType %> found.</p>
-        <% } %>
-    </div>
+        <div id="jewelries1">
+            <% if (jewelries && jewelries.length > 0) { %>
+                <% jewelries.forEach(jewelry => { %>
+                    <div class="jewelry-item1" data-id="<%= jewelry._id %>">
+                        <img src="<%= jewelry.jewelryPhoto %>" alt="<%= jewelry.jewelryName %>">
+                        <h3><%= jewelry.jewelryName %></h3>
+                        <p class="price">Price: ₪<%= jewelry.jewelryPrice %></p>
+                        <p>Description: <%= jewelry.jewelryDescription %></p>
+                        <button class="add-to-cart">Add to Bag</button>
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <p>No <%= jewelryType %> found.</p>
+            <% } %>
+        </div>
     </main>
 
     <footer>

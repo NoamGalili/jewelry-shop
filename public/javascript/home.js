@@ -60,35 +60,35 @@ document.addEventListener('DOMContentLoaded', function () {
             var itemId = jewelryItem.dataset.itemId;
             var title = jewelryItem.querySelector('h2').innerText;
             var price = jewelryItem.querySelector('.price').innerText.replace('Price: ₪', '');
+            var imageSrc = jewelryItem.querySelector('img').src;
 
-            addToCart(itemId, title, price);
+            addToCart(itemId, title, price, imageSrc);
             showCart();
         });
     });
 
-    function addToCart(itemId, title, price) {
+    function addToCart(itemId, title, price, imageSrc) {
         var cartItems = document.getElementById('cart-items');
         var cartTotal = document.getElementById('cart-total');
         var cartCount = document.getElementById('cart-count');
 
         // Create a new list item for the cart
         var li = document.createElement('li');
-        li.innerHTML = `<span>${title}</span><span>${price}</span><button class="remove-item">Remove</button>`;
+        li.innerHTML = `<img src="${imageSrc}" alt="${title}"><span>${title}</span><span>${price}</span><button class="remove-item">Remove</button>`;
+        li.dataset.itemId = itemId;
 
         // Add remove functionality to the new item
         li.querySelector('.remove-item').addEventListener('click', function () {
             li.remove();
             updateTotal();
             updateCartCount();
+            saveCartToLocalStorage();
         });
 
         cartItems.appendChild(li);
         updateTotal();
         updateCartCount();
-        // local storage is use to save the cart in the browser storage and not server-side
-        // localStorage.setItem('cart', "<ids>");
-        // save the cart in server-side
-        // updateCartInServer(<ids>);
+        saveCartToLocalStorage();
     }
 
     function updateTotal() {
@@ -122,13 +122,25 @@ document.addEventListener('DOMContentLoaded', function () {
             cart.style.display = 'none';
         }
     }
+
+    function saveCartToLocalStorage() {
+        var cartItems = [];
+        document.querySelectorAll('#cart-items li').forEach(li => {
+            var itemId = li.dataset.itemId;
+            var title = li.querySelector('span').innerText;
+            var price = li.querySelectorAll('span')[1].innerText;
+            var imageSrc = li.querySelector('img').src;
+            cartItems.push({ itemId, title, price, imageSrc });
+        });
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+    }
+
+    function loadCartFromLocalStorage() {
+        var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        cartItems.forEach(item => {
+            addToCart(item.itemId, item.title, item.price, item.imageSrc);
+        });
+    }
+
+    loadCartFromLocalStorage(); // Load cart items from local storage on page load
 });
-
-async function search() {
-    const search = document.getElementById('searchInput').value;
-    const res = await fetch(`http://localhost:80/api/search/${search}`);
-    const results = await res.json();
-    console.log(results);
-}
-
-document.getElementById('searchInput').onkeyup = search;
