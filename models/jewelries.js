@@ -7,8 +7,6 @@ connectDB();
 
 const Jewelries = new Schema({
 
-      // _id : ObjectId,
-      // jewelryID: { type: String, required: true, unique: true },
       jewelryType: { type: String, required: true },
       jewelryColor: { type: String, required: true },
       jewelryName: { type: String, required: true },
