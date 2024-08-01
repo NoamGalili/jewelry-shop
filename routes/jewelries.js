@@ -23,4 +23,9 @@ router.route("/addjewelry.ejs")
 router.route("/jewelries.ejs")
     .get(jewelriesController.getAlljewelries);
 
+    router.route("/get404")
+    .get(jewelriesController.get404);
+
+
+
 module.exports = router;

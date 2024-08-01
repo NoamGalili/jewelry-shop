@@ -110,6 +110,11 @@ const getAllNecklaces = async () => {
     }
 };
 
+function get404(req, res)
+{
+    res.render('404.ejs')
+}
+
 
 
 module.exports = {
@@ -122,5 +127,6 @@ module.exports = {
     getJewelriesByType,
     getAllNecklaces,
     getdeleteJewelryPg,
-    addJewelry
+    addJewelry,
+    get404
 }
