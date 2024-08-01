@@ -828,3 +828,11 @@ section#featured {
     font-weight: bold;
     font-size: 1.1rem;
 }
+.Manager-name::first-letter {
+    color: red; /* צבע האות הראשונה */
+    font-size: 2em; /* גודל האות הראשונה */
+    font-weight: bold; /* הופך את האות הראשונה למודגשת */
+}
+להעביר form ו פוסט
+מצליחים לגרום לפוסט להפעיל את אחת הפונקציות את ה
+אבל לא מצליחים להעביר את הדאטב
