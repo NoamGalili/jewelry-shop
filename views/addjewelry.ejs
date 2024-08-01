@@ -72,10 +72,26 @@
 
         <label for="jewelryAvaliableStock">Jewelry Available Stock:</label>
         <input type="number" id="jewelryAvaliableStock" name="jewelryAvaliableStock" required><br>
-
-
         <input type="submit" value="Submit">
     </form>
+
+    <script>
+        document.getElementById('jewelryForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const xhr = new XMLHttpRequest();
+            xhr.open(form.method, form.action, true);
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    alert('Form submitted successfully.');
+                } else {
+                    alert('Form submission failed.');
+                }
+            };
+            xhr.send(formData);
+        });
+    </script>
 
     </main>
 
@@ -90,6 +106,5 @@
         <a href="payment.ejs"><button id="checkout">Checkout</button></a>
     </div>
 
-    <script src="/javascript/addjewelry.js"></script> 
 </body>
 </html>

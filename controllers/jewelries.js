@@ -48,8 +48,7 @@ function getAddJewelryPg(req, res) {
 
 function addJewelry(req,res) 
 {
-    console.log(req)
-    console.log(res)   
+    console.log(req.id)   
 }
 
 const getJewelriesByType = async (req, res) => {
