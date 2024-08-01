@@ -5,6 +5,8 @@ const jewelriesController = require('../controllers/jewelries')
 
 router.route('/search/: type').get(jewelriesController.getAlljewelries)
 
+router.route('/addJewelry').post(jewelriesController.addJewelry)
+
 
 
 

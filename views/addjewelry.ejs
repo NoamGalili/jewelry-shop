@@ -47,7 +47,8 @@
     <main>
     
         <h1>Add New Jewelry</h1>
-    <form id="jewelryForm">
+        
+    <form id="jewelryForm" action="http://127.0.0.1:80/addJewelry" method="post">
         <label for="jewelryID">Jewelry ID:</label>
         <input type="text" id="jewelryID" name="jewelryID" required><br>
 
@@ -73,7 +74,7 @@
         <input type="number" id="jewelryAvaliableStock" name="jewelryAvaliableStock" required><br>
 
 
-        <button type="submit">Add Jewelry</button>
+        <input type="submit" value="Submit">
     </form>
 
     </main>

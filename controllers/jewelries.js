@@ -46,10 +46,10 @@ function getAddJewelryPg(req, res) {
     res.render('addjewelry.ejs');
 }
 
-function addJewelry(document) 
+function addJewelry(req,res) 
 {
-    console.log(document)
-        
+    console.log(req)
+    console.log(res)   
 }
 
 const getJewelriesByType = async (req, res) => {

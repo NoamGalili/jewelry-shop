@@ -1,4 +1,3 @@
-const jewelriesController = require('../../controllers/jewelries')
 document.addEventListener('DOMContentLoaded', () => {
     const jewelryForm = document.getElementById('jewelryForm');
 
@@ -15,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const jewelryDescription = document.getElementById('jewelryDescription').value;
         const jewelryAvaliableStock = document.getElementById('jewelryAvaliableStock').value;
         
-        jewelriesController.addJewelry(document)
     });
 
     funct(jewelryForm)
