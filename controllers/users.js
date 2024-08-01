@@ -1,23 +1,35 @@
-const userService = require('../services/userService');
+const usersService = require('../services/users.js')
 
-exports.getRegister = (req, res) => {
-    res.render('register.ejs');
-};
 
-exports.postRegister = async (req, res) => {
-    try {
-        const { username, email, password } = req.body;
 
-        // Check if the email is already in use
-        const existingUser = await User.findOne({ email });
-        if (existingUser) {
-            return res.status(400).send('Email already in use');
-        }
+function getMyProfile (req, res)
+{
+    res.render('myprofile.ejs')
+}
 
-        await userService.createUser({ username, email, password });
-        res.redirect('/login.ejs');
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('Server error');
-    }
-};
+function getRegister (req, res)
+{
+    res.render('register.ejs')
+}
+
+function getLogin(req, res)
+{
+    res.render('login.ejs')
+}
+
+//---add stuff that dont belong to this stream here
+
+function getforgetpassword (req, res)
+{
+    res.render('forgetpassword.ejs')
+}
+
+//---
+
+module.exports = 
+{
+    getMyProfile,
+    getRegister,
+    getLogin,
+    getforgetpassword
+}

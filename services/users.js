@@ -1,22 +1,32 @@
-const User = require ('../models/users')
+const User = require ('../models/users.js')
 
-const createUser = async (userData) => {
-    try {
-        const hashedPassword = await bcrypt.hash(userData.password, 10);
+const createUser = async (userData) => 
+{
+    try 
+    {
+        const salt = crypto.randomBytes(16).toString('hex');
+        const hash = await calculateHash(userData.UserPassword + salt);
 
-        const newUser = new User({
-            username: userData.username,
-            email: userData.email,
-            password: hashedPassword
+        const newUser = new User(
+        {
+            UserID: userData.UserID,
+            UserType: userData.UserType,
+            Username: userData.Username,
+            UserMail: userData.UserMail,
+            UserPasswordSHA256Hash: hash,
+            UserSalt: salt
         });
 
         await newUser.save();
         return newUser;
-    } catch (error) {
+    }
+    
+    catch (error) 
+    {
         console.error('Error creating user:', error);
         throw error;
     }
-};
+}
 
 async function calculateHash(message) 
 {

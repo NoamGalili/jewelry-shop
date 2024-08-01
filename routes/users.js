@@ -1,8 +1,19 @@
-const express = require('express');
-const router = express.Router();
-const userController = require('../controllers/userController');
+const express = require('express')
 
-router.get('/register.ejs', userController.getRegister);
-router.post('/register.ejs', userController.postRegister);
+const router = express.Router()
 
-module.exports = router;
+const usersController = require('../controllers/users.js')
+
+router.route("/login.ejs").get(usersController.getLogin)
+router.route("/register.ejs").get(usersController.getRegister)
+router.route("/Myprofile.ejs").get(usersController.getMyProfile)
+router.route("/forgetpassword.ejs").get(usersController.getforgetpassword)
+
+//---add stuff that dont belong to this stream here
+
+
+
+
+
+//---
+module.exports = router
