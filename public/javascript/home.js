@@ -127,3 +127,4 @@ async function search(){
 }
 
 document.getElementById('searchInput').onkeyup = search;
+

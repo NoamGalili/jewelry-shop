@@ -46,6 +46,11 @@ function getAddJewelryPg(req, res) {
     res.render('addjewelry.ejs');
 }
 
+
+function getDeleteJewelry(req, res) {
+    res.render('deletejewelry.ejs');
+}
+
 function addJewelry(req,res) 
 {
     console.log(req.id)   
@@ -107,6 +112,6 @@ module.exports = {
     searchJewelry,
     getJewelriesByType,
     getAllNecklaces,
-
+    getDeleteJewelry,
     addJewelry
 }
