@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var cart = document.getElementById('cart');
     var searchIcon = document.getElementById('searchIcon');
     var cartButton = document.getElementById('cart-button');
+    var searchInput = document.getElementById('searchInput');
 
     searchBar.classList.add('hidden');  // Hide the search bar initially
 
@@ -141,6 +142,21 @@ document.addEventListener('DOMContentLoaded', function () {
             addToCart(item.itemId, item.title, item.price, item.imageSrc);
         });
     }
+
+    // New: Search functionality
+    searchInput.addEventListener('input', function () {
+        var filter = searchInput.value.toLowerCase();
+        var jewelryItems = document.querySelectorAll('.jewelry-item');
+
+        jewelryItems.forEach(item => {
+            var title = item.querySelector('h2').innerText.toLowerCase();
+            if (title.includes(filter)) {
+                item.style.display = '';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
 
     loadCartFromLocalStorage(); // Load cart items from local storage on page load
 });

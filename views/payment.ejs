@@ -27,8 +27,6 @@
         </div>
     </header>
 
-
-
     <nav>
         <ul>
             <li><a href="/" id="home-link">Home</a></li>
@@ -46,13 +44,11 @@
         </ul>
     </nav>
 
-
     <main>
         <!-- Payment Section -->
         <section id="payment" class="payment-section">
             <div class="payment-container">
                 <div class="left-column">
-                  
                     <form action="/payment" method="post">
                         <div class="form-group">
                             <label>Shipping Address</label>
@@ -86,14 +82,19 @@
                 <div class="right-column">
                     <div class="order-summary">
                         <h2>Order Summary</h2>
-                        <p>Subtotal:  ₪0</p>
-                        <p>Express Delivery with Signature:  ₪0</p>
-                        <p>Estimated Total:  ₪0</p>
+                        <p>Subtotal: ₪0</p>
+                        <p>Express Delivery with Signature: ₪0</p>
+                        <p>Estimated Total: ₪0</p>
+                    </div>
+                    <div class="cart-items">
+                        <h3>Items in Cart</h3>
+                        <ul id="cart-items"></ul>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
     <footer>
         <p>&copy; 2024 NTLC Jewelry. All rights reserved.</p>
     </footer>
@@ -108,7 +109,3 @@
     <script src="/javascript/payment.js"></script>
 </body>
 </html>
-
-
-
-
